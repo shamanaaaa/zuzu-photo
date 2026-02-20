@@ -20,6 +20,7 @@ const {
   SMTP_PASS,
   SMTP_FROM,
   CONTACT_TO,
+  CONTACT_TO_LIST,
   PORT = "3000",
 } = process.env;
 
@@ -41,10 +42,19 @@ app.post("/api/contact", async (req, res) => {
   }
 
   try {
+    const toRaw = (CONTACT_TO_LIST || CONTACT_TO || "").trim();
+    const to = toRaw
+      ? toRaw
+          .replace(/^"|"$/g, "")
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean)
+      : undefined;
+
     await transporter.sendMail({
       from: `"${name}" <${SMTP_FROM}>`,
       replyTo: email,
-      to: CONTACT_TO,
+      to,
       subject: `Správa z webu – ${type || "kontaktný formulár"}`,
       text: [
         `Meno: ${name}`,
@@ -65,7 +75,8 @@ app.post("/api/contact", async (req, res) => {
 // Serve Vite build
 const dist = join(dirname(fileURLToPath(import.meta.url)), "..", "dist");
 app.use(express.static(dist));
-app.get("*", (_req, res) => res.sendFile(join(dist, "index.html")));
+// Express 5 / path-to-regexp: easiest catch-all is a regex route
+app.get(/.*/, (_req, res) => res.sendFile(join(dist, "index.html")));
 
 app.listen(Number(PORT), () => {
   console.log(`Server running on port ${PORT}`);
