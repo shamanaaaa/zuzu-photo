@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import { ArrowLeft, X } from "lucide-react";
 import { galleryImages, images } from "../data/images";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
@@ -106,6 +106,8 @@ export function PortfolioCategory() {
 
   const allImages = [...categoryImages, ...extraImageItems];
 
+  const touchStartX = useRef<number>(0);
+
   const openLightbox = useCallback((idx: number) => setLightboxIndex(idx), []);
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
 
@@ -181,48 +183,58 @@ export function PortfolioCategory() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
             onClick={closeLightbox}
+            onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+            onTouchEnd={(e) => {
+              const dx = e.changedTouches[0].clientX - touchStartX.current;
+              if (Math.abs(dx) > 50) {
+                e.stopPropagation();
+                if (dx < 0) {
+                  setLightboxIndex(lightboxIndex < allImages.length - 1 ? lightboxIndex + 1 : 0);
+                } else {
+                  setLightboxIndex(lightboxIndex > 0 ? lightboxIndex - 1 : allImages.length - 1);
+                }
+              }
+            }}
           >
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 p-2 text-white/70 hover:text-white transition-colors"
+              className="absolute top-4 right-4 z-10 p-2 text-white/70 hover:text-white transition-colors"
             >
               <X className="w-8 h-8" />
             </button>
-            <div className="flex items-center gap-4 max-w-5xl w-full">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setLightboxIndex(
-                    lightboxIndex > 0 ? lightboxIndex - 1 : allImages.length - 1
-                  );
-                }}
-                className="shrink-0 p-2 text-white/70 hover:text-white text-3xl"
-              >
-                ‹
-              </button>
-              <motion.img
-                key={allImages[lightboxIndex]?.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                src={allImages[lightboxIndex]?.src}
-                alt={allImages[lightboxIndex]?.alt}
-                className="max-h-[80vh] w-auto mx-auto rounded-lg object-contain"
-                onClick={(e) => e.stopPropagation()}
-              />
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setLightboxIndex(
-                    lightboxIndex < allImages.length - 1 ? lightboxIndex + 1 : 0
-                  );
-                }}
-                className="shrink-0 p-2 text-white/70 hover:text-white text-3xl"
-              >
-                ›
-              </button>
-            </div>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxIndex(
+                  lightboxIndex > 0 ? lightboxIndex - 1 : allImages.length - 1
+                );
+              }}
+              className="absolute left-2 z-10 p-3 text-white/70 hover:text-white text-4xl bg-black/40 rounded-full leading-none"
+            >
+              ‹
+            </button>
+            <motion.img
+              key={allImages[lightboxIndex]?.id}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              src={allImages[lightboxIndex]?.src}
+              alt={allImages[lightboxIndex]?.alt}
+              className="max-h-[85vh] max-w-[calc(100vw-80px)] rounded-lg object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxIndex(
+                  lightboxIndex < allImages.length - 1 ? lightboxIndex + 1 : 0
+                );
+              }}
+              className="absolute right-2 z-10 p-3 text-white/70 hover:text-white text-4xl bg-black/40 rounded-full leading-none"
+            >
+              ›
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
