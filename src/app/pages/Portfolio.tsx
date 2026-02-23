@@ -70,6 +70,7 @@ export function Portfolio() {
             { to: "/portfolio/rodinne", label: "Rodinné" },
             { to: "/portfolio/svadobne", label: "Svadobné" },
             { to: "/portfolio/exterier", label: "Exteriér" },
+            { to: "/portfolio/vianocne", label: "Vianočné" },
           ].map((link) => (
             <Link
               key={link.to}

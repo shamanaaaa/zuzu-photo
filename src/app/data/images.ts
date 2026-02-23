@@ -1,19 +1,19 @@
 export const images = {
-  hero: "/images/novorodenci/novorodenci-1.jpg",
-  newborn1: "/images/novorodenci/novorodenci-2.jpg",
-  newborn2: "/images/novorodenci/novorodenci-3.jpg",
+  hero: "/images/novorodenci/novorodenci (1).jpg",
+  newborn1: "/images/novorodenci/novorodenci (2).jpg",
+  newborn2: "/images/novorodenci/novorodenci (3).jpg",
   baby1: "/images/deti-do-1-roka/deti-do-1-roka-1.jpg",
   baby2: "/images/deti-do-1-roka/deti-do-1-roka-2.jpg",
   toddler: "/images/deti-od-1-roka/deti-od-1-roka-1.jpg",
   childGirl: "/images/deti/deti-1.jpg",
   teenager: "/images/deti-15/deti-15-1.jpg",
-  maternity1: "/images/tehotenske/tehotenske-1.jpg",
-  maternity2: "/images/tehotenske/tehotenske-2.jpg",
+  maternity1: "/images/tehotenske/tehotenske (1).jpg",
+  maternity2: "/images/tehotenske/tehotenske (2).jpg",
   wedding1: "/images/svadobne/svadobne-1.jpg",
   wedding2: "/images/svadobne/svadobne-2.jpg",
   wedding3: "/images/svadobne/svadobne-3.jpg",
-  family1: "/images/rodinne/rodinne-1.jpg",
-  family2: "/images/rodinne/rodinne-2.jpg",
+  family1: "/images/rodinne/1.jpg",
+  family2: "/images/rodinne/2.jpg",
   exterior1: "/images/exterier/exterier-1.jpg",
   exterior2: "/images/exterier/exterier-2.jpg",
   studio1: "/images/atelier/atelier-1.jpg",
@@ -44,16 +44,41 @@ const makeImages = (
   }));
 
 export const galleryImages: GalleryImage[] = [
-  ...makeImages("novorodenci", "novorodenci", "novorodenci", 24, "Novorodenec"),
+  ...Array.from({ length: 52 }, (_, i) => ({
+    id: `novorodenci-${i + 1}`,
+    src: `/images/novorodenci/novorodenci (${i + 1}).jpg`,
+    alt: `Novorodenec ${i + 1}`,
+    category: "novorodenci",
+  })),
   ...makeImages("deti", "deti-do-1-roka", "deti-do-1-roka", 18, "Bábätko"),
   ...makeImages("deti", "deti-od-1-roka", "deti-od-1-roka", 18, "Dieťa"),
   ...makeImages("deti", "deti", "deti", 17, "Dieťa"),
   ...makeImages("deti", "deti-15", "deti-15", 13, "Tínedžer"),
-  ...makeImages("rodina", "rodinne", "rodinne", 29, "Rodinné fotenie"),
-  ...makeImages("tehotenske", "tehotenske", "tehotenske", 24, "Tehotenské fotenie"),
+  ...[
+    "01","013","025","04","06","08","1","10","11","13","14","15",
+    "16","17","18","2","20","21","24","25","27","29","3","30","31",
+    "4","5","6","7","9",
+  ].map((name, i) => ({
+    id: `rodina-${i + 1}`,
+    src: `/images/rodinne/${name}.jpg`,
+    alt: `Rodinné fotenie ${i + 1}`,
+    category: "rodina",
+  })),
+  ...Array.from({ length: 28 }, (_, i) => ({
+    id: `tehotenske-${i + 1}`,
+    src: `/images/tehotenske/tehotenske (${i + 1}).jpg`,
+    alt: `Tehotenské fotenie ${i + 1}`,
+    category: "tehotenske",
+  })),
   ...makeImages("svadobne", "svadobne", "svadobne", 60, "Svadobné fotenie"),
   ...makeImages("exterier", "exterier", "exterier", 13, "Exteriér"),
   ...makeImages("atelier", "atelier", "atelier", 18, "Ateliér"),
+  ...Array.from({ length: 38 }, (_, i) => ({
+    id: `vianocne-${i + 1}`,
+    src: `/images/vianocne/vianocne (${i + 1}).jpg`,
+    alt: `Vianočné fotenie ${i + 1}`,
+    category: "vianocne",
+  })),
 ];
 
 export const portfolioCategories = [
@@ -65,4 +90,5 @@ export const portfolioCategories = [
   { key: "svadobne", label: "Svadobné" },
   { key: "exterier", label: "Exteriér" },
   { key: "atelier", label: "Ateliér" },
+  { key: "vianocne", label: "Vianočné" },
 ];

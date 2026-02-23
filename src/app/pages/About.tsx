@@ -34,6 +34,14 @@ export function About() {
           >
             O mne
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-muted-foreground text-lg"
+          >
+            Zuzana Ďurná-Kondeková: K fotografovaniu ma inšpirovali moje dve krásne deti
+          </motion.p>
         </div>
       </section>
 
@@ -70,24 +78,13 @@ export function About() {
           >
             <div className="space-y-5 text-foreground leading-relaxed">
               <p>
-                Volám sa Zuzana Ďurná-Kondeková a fotografovaniu sa venujem od
-                stredoškolských čias. Vyštudovala som umelecko-remeselné
-                spracovanie kovov (pasiar), no fotografia ma vždy priťahovala —
-                vďaka môjmu otcovi, fotografovi, dokumentaristovi a vydavateľovi
-                Jurajovi Ďurnému, ktorý mi daroval môj prvý fotoaparát a
-                zasvätil ma do jej tajov. Niekoľko rokov som pracovala ako
-                grafička v jeho reklamnej agentúre.
+                Zuzana Ďurná-Kondeková sa fotografovaniu venuje od svojich stredoškolských čias. Po materskej dovolenke si splnila sen a založila si vlastný fotoateliér. Vďaka svojim dcéram nadšene a najradšej fotografuje detský svet okolo seba.
               </p>
               <p>
-                Po materskej dovolenke som si splnila sen — otvorila som vlastný
-                fotoateliér v Čadci. Moje dve krásne dcéry sú mojou
-                každodennou inšpiráciou a práve vďaka nim som si obľúbila
-                fotografovanie detí najviac zo všetkého.
+                Okrem študijného odboru pasiar (umelecko-remeselné spracovanie kovov) ju zaujímali aj hodiny fotografie. Má otvorený vlastný ateliér v Čadci, ktorý je bohato vybavený rôznymi rekvizitami, ktoré nielen nakupuje, ale aj vlastnoručne vyrába — a tým sú jej fotografie originálne.
               </p>
               <p>
-                Verím, že dokonalá fotografia je taká, na ktorej je len to, čo
-                tam má byť. A výnimočná je vtedy, keď jej dokážem dať dušu —
-                keď vás pohľad na ňu chytí za srdce.
+                Ďalšou inšpiráciou bol jej otec, fotograf, dokumentarista a vydavateľ Juraj Ďurný, ktorý jej daroval prvý fotoaparát a zasvätil ju do tajov fotografovania. V jeho reklamnej agentúre pracovala ako grafička niekoľko rokov. Po skončení materskej dovolenky si otvorila vlastný ateliér, kde sa naplno venuje svojej tvorbe. Okrem fotografovania detí, novorodencov a portrétovej fotografie sa venuje aj svadobnej, tehotenskej, rodinnej, fotografovaniu modeliek, interiérovej a exteriérovej fotografii.
               </p>
             </div>
           </motion.div>
@@ -150,21 +147,44 @@ export function About() {
               Z rozhovoru
             </h2>
 
-            <div className="bg-secondary rounded-2xl p-6 sm:p-8">
-              <p className="text-sm text-primary mb-4 italic">
-                Všimla som si, že fotografujete najčastejšie portréty detí. Je
-                práve portrét detí tou formou fotografií, ktoré robíte
-                najradšej?
-              </p>
-              <blockquote className="text-foreground leading-relaxed italic border-l-4 border-primary/30 pl-4">
-                Deti ma pri fotografovaní vždy fascinujú. V okamihu sa dokážu
-                stať veľmi dospelé — stačí pár rekvizít a pred objektívom mám
-                kuchárika, kominárika, manažérku, opravára či boxera... Ale
-                pritom stále ostávajú deťmi, čistými a nevinnými. A my dospelí,
-                aby sme pri pohľade na ich fotografie objavili dieťa v sebe. Ak
-                sa nám to podarí, náš život bude určite krajší.
-              </blockquote>
-              <p className="text-xs text-muted-foreground mt-4">
+            <div className="space-y-6">
+              <div className="bg-secondary rounded-2xl p-6 sm:p-8">
+                <p className="text-sm text-primary mb-3 italic font-medium">
+                  Odkedy sa venujete fotografovaniu a ako dlho vykonávate túto profesiu?
+                </p>
+                <blockquote className="text-foreground leading-relaxed border-l-4 border-primary/30 pl-4">
+                  Okrem študijného odboru pasiar (umelecko-remeselné spracovanie kovov) ma zaujímali aj hodiny fotografie. Mám otvorený vlastný ateliér v Čadci, ktorý je bohato vybavený rôznymi rekvizitami, ktoré nielen nakupujem, ale aj vlastnoručne vyrábam, a tým sú moje fotografie originálne.
+                </blockquote>
+              </div>
+
+              <div className="bg-secondary rounded-2xl p-6 sm:p-8">
+                <p className="text-sm text-primary mb-3 italic font-medium">
+                  Čo vás k fotografovaniu priviedlo? Prečo práve fotografia?
+                </p>
+                <blockquote className="text-foreground leading-relaxed border-l-4 border-primary/30 pl-4">
+                  Ďalšou inšpiráciou bol môj otec, fotograf, dokumentarista a vydavateľ Juraj Ďurný, ktorý mi daroval môj prvý fotoaparát a zasvätil ma do tajov fotografovania. V jeho reklamnej agentúre som pracovala ako grafička niekoľko rokov. Po skončení materskej dovolenky som si otvorila vlastný ateliér, kde sa naplno venujem svojej tvorbe. Okrem fotografovania detí, novorodencov a portrétovej fotografie sa venujem aj svadobnej, tehotenskej, rodinnej, fotografovaniu modeliek, interiérovej a exteriérovej fotografii.
+                </blockquote>
+              </div>
+
+              <div className="bg-secondary rounded-2xl p-6 sm:p-8">
+                <p className="text-sm text-primary mb-3 italic font-medium">
+                  Všimla som si, že fotografujete najčastejšie portréty detí. Je práve portrét detí tou formou fotografií, ktoré robíte najradšej?
+                </p>
+                <blockquote className="text-foreground leading-relaxed border-l-4 border-primary/30 pl-4">
+                  Deti ma pri fotografovaní vždy fascinujú. V okamihu sa dokážu stať veľmi dospelé, stačí pár rekvizít a pred objektívom mám kuchárika, kominárika, manažérku, opravára či boxera…, ale pritom stále ostávajú deťmi, čistými a nevinnými. Veľmi by som im priala, aby také ostali, aj keď vyrastú. A my dospelí, aby sme pri pohľade na ich fotografie objavili dieťa v sebe. Ak sa nám to podarí, náš život bude určite krajší…
+                </blockquote>
+              </div>
+
+              <div className="bg-secondary rounded-2xl p-6 sm:p-8">
+                <p className="text-sm text-primary mb-3 italic font-medium">
+                  Čo vaša fotografia musí obsahovať, aby bola podľa vás dokonalá, alebo sa k dokonalosti aspoň približovala?
+                </p>
+                <blockquote className="text-foreground leading-relaxed border-l-4 border-primary/30 pl-4">
+                  Je dobré, keď je na fotografii len to, čo tam má byť. Vynikajúce je, keď fotografii dokážem dať dušu, ktorú má vtedy, keď vás pohľad na ňu chytí za srdce.
+                </blockquote>
+              </div>
+
+              <p className="text-xs text-muted-foreground text-right">
                 Zdroj: Kysucký večerník
               </p>
             </div>

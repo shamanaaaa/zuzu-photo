@@ -43,10 +43,10 @@ export function Atelier() {
             className="text-3xl sm:text-4xl md:text-5xl text-foreground mb-4"
             style={{ fontFamily: "var(--font-family-heading)" }}
           >
-            Náš ateliér
+            Jedinečný ateliér ZUZU photo-graphic
           </motion.h1>
           <p className="text-muted-foreground">
-            Miesto, kde vznikajú krásne spomienky
+            miesto, kde sa budete cítiť ako doma :)
           </p>
         </div>
       </section>
@@ -81,22 +81,22 @@ export function Atelier() {
         <motion.div {...fadeUp} className="max-w-3xl mx-auto">
           <div className="space-y-5 text-foreground leading-relaxed">
             <p>
-              Fotografujem v krásnych priestoroch rodinného domu na Hornej ulici
-              123 v Čadci — kúsok nad zdravotnou školou. Ateliér je plne
-              vybavený a stále sa rozrastá o nové rekvizity a pozadia, z ktorých
-              mnohé vlastnoručne vyrábam.
+              Náš fotoateliér sa nachádza priamo v centre mesta Čadca, v rodinnom dome s pohodlnou možnosťou parkovania. Nečaká vás klasický „studený" ateliér, ale príjemné domáce prostredie, kde sa môžete uvoľniť a cítiť prirodzene.
             </p>
             <p>
-              Nájdete tu stovky rekvizít pre tých najmenších aj tých väčších —
-              od košíčkov a čeleničiek pre novorodeniatka, cez klobúky a kostýmy
-              pre deti, až po elegantné doplnky pre tehuľky. K dispozícii je
-              tiež prebaľovací pultík, takže vaše bábätko bude mať pohodlie ako
-              doma.
+              K dispozícii je krásny, plne vybavený ateliér s množstvom rekvizít, pozadí a doplnkov, ktoré sme počas 15 rokov starostlivo vyberali a dopĺňali. Pre novorodeniatka máme pripravené oblečenie, deky, čelenky, košíčky, prebaľovací pult aj všetko potrebné pre ich maximálne pohodlie a bezpečie. Nemusíte si nosiť takmer nič — o všetko je postarané.
             </p>
             <p>
-              Po nafotení si môžete odniesť svoje fotografie na štýlovom USB
-              kľúči v tvare fotoaparátu — krásna spomienka nielen na
-              fotografiách, ale aj v rukách.
+              Veľkou výhodou nášho priestoru je aj možnosť kombinovať interiérové a exteriérové fotenie. Súčasťou domu je krásna záhrada s prirodzeným svetlom a zeleňou, ktorá ponúka nádherné možnosti najmä pri rodinných a detských foteniach. K dispozícii je aj terasa, kde si môžete počas fotenia oddýchnuť v príjemnej atmosfére. Mamičky si vychutnajú kvalitnú kávičku alebo čaj, detičky sa zabavia a aj nedočkaví tatinkovia si nájdu svoju chvíľu pohody. Naším cieľom je, aby ste sa u nás cítili komfortne, bez stresu a zhonu. Aby fotenie nebolo povinnosťou, ale príjemným rodinným zážitkom.
+            </p>
+            <p>
+              Za tie roky u nás nevznikli len fotografie, ale aj krásne vzťahy. Mnohých z vás som prvýkrát stretla ako nevestu a ženícha, neskôr ako budúcich rodičov a dnes sledujem, ako z vašich novorodeniatok vyrastajú školáci či mladí dospelí. Je nádherné vidieť, ako sa „naše" detičky menia a rastú. Veľmi si vážime vašu dôveru a teší nás, že sa ku nám opakovane vraciate zachytiť ďalšie kapitoly svojho príbehu.
+            </p>
+            <p>
+              Verím, že to tak bude aj naďalej – a že náš ateliér zostane miestom, kam budete radi chodiť nielen kvôli fotografiám, ale aj kvôli pocitu, ktorý si odtiaľ odnesiete.
+            </p>
+            <p>
+              Objednávky: +421 907 533 373. Tešíme sa na Vás :)
             </p>
           </div>
         </motion.div>

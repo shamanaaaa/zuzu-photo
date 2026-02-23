@@ -8,7 +8,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 type CategoryData = {
   title: string;
-  intro: string;
+  intro: string | string[];
   filterKey: string;
   extraImages?: string[];
   cta?: string;
@@ -18,7 +18,13 @@ type CategoryData = {
 const categoryMap: Record<string, CategoryData> = {
   novorodenci: {
     title: "Novorodenecké fotografovanie",
-    intro: "Prvé dni života sú zázračné. Novorodeniatka sa fotografujú ideálne do 14 dní od narodenia, kedy sú ešte pokojné a poddajné. V pohodlí nášho ateliéru s množstvom rekvizít, jemným svetlom a teplou atmosférou vytvoríme spomienky na celý život. Vaše zlatíčko u nás bude v bezpečí a pohode.",
+    intro: [
+      "Prvé dni života sú tie najkrehkejšie a najzázračnejšie. Maličké pršteky, sladké zívanie a vôňa bábätka, na ktorú sa nedá zabudnúť. Novorodeniatka sa fotografujú ideálne do 14 až 21 dní od narodenia, kedy ešte väčšinu času spokojne spinkajú a nechajú sa nežne uložiť do tých najrozkošnejších póz.",
+      "Fotenie prebieha v útulnom rodinnom dome, kde je k dispozícii pohodlné parkovanie priamo na mieste. Čaká vás pokoj, teplé svetlo, mäkučké deky, veľa trpezlivosti a vôňa dobrej kávy, ktorú si môžete vychutnať bez stresu. Pre mamičky s detičkami je pripravený prebaľovací pult a všetko potrebné pre pohodlie vášho pokladu. Nemusíte si robiť starosti s balením pol domácnosti – máme pre vás kopec krásneho oblečenia, čeleniek, čiapočiek, dečiek a rekvizít, ktoré spolu vyberieme tak, aby vaše bábätko vyniklo v celej svojej dokonalosti. Oteckovia si zatiaľ môžu oddýchnuť na terase pri kávičke a vychutnať si túto výnimočnú chvíľu. A čo je najdôležitejšie – vaše bábätko je u nás v bezpečí.",
+      "Fotením novorodeniatok sa venujem už viac ako 15 rokov a počas tohto času som nazbierala množstvo skúseností, trpezlivosti a citu pre prácu s tými najmenšími. Sama som mamou dvoch dievčatiek, takže veľmi dobre viem, aké vzácne a citlivé je toto obdobie. Ku každému bábätku pristupujem s rešpektom, jemnosťou a maximálnou starostlivosťou.",
+      "Budem sa tešiť, ak sa ku nám budete s radosťou vracať aj postupne, ako bude vaše bábätko rásť – na prvé úsmevy, prvé sedenie, prvé krôčiky či rodinné fotenia. Je pre mňa krásne sledovať, ako sa z malých uzlíčkov stávajú veľké osobnosti, a byť súčasťou vašich rodinných príbehov. Chcem, aby ste od nás odchádzali nielen s nádhernými fotografiami, ale aj s pocitom, že ste našli miesto, kam budete radi znovu prichádzať.",
+      "Objednávky: +421 907 533 373. Príďte a poďme spolu tvoriť vaše neopakovateľné spomienky! Tešíme sa na Vás :)",
+    ],
     filterKey: "novorodenci",
     cta: "Pozrieť cenník",
     ctaLink: "/cennik",
@@ -48,21 +54,51 @@ const categoryMap: Record<string, CategoryData> = {
   },
   tehotenske: {
     title: "Tehotenské fotografovanie",
-    intro: "Tehotenstvo je jedným z najkrajších období v živote ženy. Nechajte si ho zachytiť v nežných, elegantných portrétoch — v ateliéri alebo v exteriéri. K dispozícii máme aj krásne tehotenské šaty na fotografovanie.",
+    intro: [
+      "Tehotenstvo je jedinečné, magické a neopakovateľné obdobie v živote ženy. Čas, keď pod srdcom nosíte celý svoj svet.",
+      "Fotenie prebieha v útulnom rodinnom dome, kde je k dispozícii parkovanie priamo na mieste. Verím, že sa u nás budete cítiť pohodlne a uvoľnene. Čaká vás pokoj, jemné svetlo, teplá atmosféra a vôňa dobrej kávy, ktorú si môžete vychutnať počas fotenia – alebo, ak vám v tomto nádhernom období vôňa kávy nerobí dobre, tatino si ju môže pokojne vychutnať na terase. :)",
+      "Dovoľte mi zachytiť vás v umeleckých portrétoch, ktoré zvýraznia vašu eleganciu, nežnosť a jedinečnú krásu očakávania. K dispozícii sú aj tehotenské šaty, ktoré môžete využiť – alebo si pokojne obliecť svoje obľúbené, v ktorých sa cítite krásna a sebavedomá. Nemusíte vedieť pózovať – všetkým vás jemne prevediem.",
+      "Fotografie môžu byť farebné aj čiernobiele – každá verzia zachytí okamihy tak, aby boli nadčasové a plné emócií. Vaše pohodlie a bezpečie sú pre mňa prioritou, aby sa každá budúca maminka mohla cítiť uvoľnene a tešiť sa z každého okamihu.",
+      "Doprajte si tento zážitok pre seba a pre spomienky, ktoré budete milovať navždy.",
+      "Objednávky: +421 907 533 373. Teším sa, keď spolu zachytíme toto čarovné obdobie skôr, než sa z bruška ozve prvé „ahoj, mami\".",
+    ],
     filterKey: "tehotenske",
     cta: "Pozrieť cenník",
     ctaLink: "/cennik",
   },
   rodinne: {
     title: "Rodinné fotografovanie",
-    intro: "Rodina je to najdôležitejšie, čo máme. Spoločné fotografie sú pokladom, ku ktorému sa budete celý život vracať. Príďte k nám celá rodina a zachytíme váš spoločný príbeh.",
+    intro: [
+      "Rodinné chvíle sú tie najcennejšie a fotografie sú spomienky, ktoré vydržia celé roky.",
+      "V našom útulnom ateliéri v rodinnom dome vytvoríme fotografie, ktoré sú nielen krásne, ale aj nadčasové – tlačíme ich na kvalitný papier, takže nikdy nevyblednú a zostanú vašej rodine na spomínanie ešte veľmi dlhé roky.",
+      "K dispozícii máte pohodlný ateliér s parkovaním priamo na mieste, krásnu terasu aj záhradu, kde sa dá fotografovať vonku. Môžete si vybrať atmosféru, ktorá vám najviac vyhovuje, alebo kombinovať interiér s exteriérom – a to všetko pokojne a pohodlne, s úžasnou kávou alebo čajom v ruke.",
+      "Fotenie vediem s citom a trpezlivosťou, aby sa všetci cítili uvoľnene a prirodzene. Spoločne zachytíme vaše rodinné puto, smiech, drobné radosti a všetky neopakovateľné okamihy, ktoré tvoria jedinečnú históriu vašej rodiny. Každý pohľad na fotografie vám pripomenie lásku, blízkosť a teplo, ktoré ste spolu prežili – a tieto momenty zostanú živé navždy.",
+      'Za 15 rokov práce u nás nevznikli len fotografie, ale aj krásne vzťahy. Mnohých z vás som prvýkrát stretla ako nevestu a ženícha, neskôr ako budúcich rodičov, a dnes sledujem, ako z vašich novorodeniatok vyrastajú školáci či mladí dospelí. Je nádherné vidieť, ako sa „naše" detičky menia a rastú.',
+      "Veľmi si vážime vašu dôveru a teší nás, že sa k nám rodinky radi vracajú zachytiť ďalšie kapitoly svojho príbehu. Verím, že tak bude aj naďalej – a že náš ateliér zostane miestom, kam budete radi prichádzať nielen kvôli fotografiám, ale aj kvôli pocitu, ktorý si odtiaľ odnesiete.",
+      "Objednávky: +421 907 533 373  Tešíme sa na vás",
+    ],
     filterKey: "rodina",
+    cta: "Pozrieť cenník",
+    ctaLink: "/cennik",
   },
   svadobne: {
     title: "Svadobné fotografovanie",
     intro: "Váš svadobný deň je plný emócií, krasy a lásky. Je mojou úlohou, aby ste tieto okamihmi mohli prežívať znova a znova — prostredníctvom fotografií, ktoré rozprávajú váš príbeh. Pracujem nenápadne, s citom a vždy v uvoľnenej, priateľskej atmosfére.",
     filterKey: "svadobne",
     cta: "Pozrieť svadobné balíčky",
+    ctaLink: "/cennik",
+  },
+  vianocne: {
+    title: "Vianočné fotografovanie",
+    intro: [
+      "Vianoce sú časom kúziel, smiechu a spoločných spomienok, ktoré zostávajú navždy.",
+      'V našom útulnom rodinnom ateliéri s pohodlným parkovaním priamo pred domom si rodinky užijú čarovnú sviatočnú atmosféru skôr, než prídu sviatky – detičky „pečú" perníčky, píšu listy Ježiškovi, hrajú na malý detský klavír a objavujú kopec ďalších zábavných aktivít. Za 15 rokov fotenia máme množstvo rekvizít, aby boli fotografie vždy iné a zaujímavé, a aby každý rok vznikali nové, jedinečné spomienky.',
+      "Fotenie prebieha v dostatočnom predstihu, aby ste mali fotografie pod stromčekom – prvé termíny sú už v októbri, najvhodnejšie sú novembrové a december len prvé dva týždne, ak chcete mať fotky do Vianoc. Rezervujte si svoj termín včas a pripravte sa na nezabudnuteľné Vianoce plné smiechu a radosti.",
+      "Každý pohľad, úsmev a moment radosti sa premení na nadčasové fotografie, ktoré budú pripomínať túto jedinečnú chvíľu.",
+      "Objednávky: +421 907 533 373. Tešíme sa na vás",
+    ],
+    filterKey: "vianocne",
+    cta: "Pozrieť cenník",
     ctaLink: "/cennik",
   },
   exterier: {
@@ -115,7 +151,7 @@ export function PortfolioCategory() {
     <div className="min-h-screen">
       {/* Header */}
       <section className="py-16 sm:py-20 bg-secondary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/portfolio"
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-6"
@@ -129,9 +165,11 @@ export function PortfolioCategory() {
           >
             {data.title}
           </h1>
-          <p className="text-muted-foreground leading-relaxed max-w-2xl">
-            {data.intro}
-          </p>
+          <div className="text-muted-foreground leading-relaxed max-w-3xl space-y-3">
+            {Array.isArray(data.intro)
+              ? data.intro.map((p, i) => <p key={i}>{p}</p>)
+              : <p>{data.intro}</p>}
+          </div>
           {data.cta && data.ctaLink && (
             <div className="mt-6 flex gap-4">
               <Link
