@@ -1,23 +1,23 @@
 export const images = {
-  hero: "/images/novorodenci/novorodenci (1).jpg",
-  newborn1: "/images/novorodenci/novorodenci (2).jpg",
-  newborn2: "/images/novorodenci/novorodenci (3).jpg",
-  baby1: "/images/deti-do-1-roka/deti-do-1-roka-1.jpg",
-  baby2: "/images/deti-do-1-roka/deti-do-1-roka-2.jpg",
-  toddler: "/images/deti-od-1-roka/deti-od-1-roka-1.jpg",
-  childGirl: "/images/deti/deti-1.jpg",
-  teenager: "/images/deti-15/deti-15-1.jpg",
-  maternity1: "/images/tehotenske/tehotenske (1).jpg",
-  maternity2: "/images/tehotenske/tehotenske (2).jpg",
-  wedding1: "/images/svadobne/svadobne-1.jpg",
-  wedding2: "/images/svadobne/svadobne-2.jpg",
-  wedding3: "/images/svadobne/svadobne-3.jpg",
-  family1: "/images/rodinne/1.jpg",
-  family2: "/images/rodinne/2.jpg",
-  exterior1: "/images/exterier/exterier-1.jpg",
-  exterior2: "/images/exterier/exterier-2.jpg",
-  studio1: "/images/atelier/atelier-1.jpg",
-  studio2: "/images/atelier/atelier-2.jpg",
+  hero: "/images/Novorodenecke/novorodenecke (1).jpg",
+  newborn1: "/images/Novorodenecke/novorodenecke (2).jpg",
+  newborn2: "/images/Novorodenecke/novorodenecke (3).jpg",
+  baby1: "/images/Deticky/detske (1).jpg",
+  baby2: "/images/Deticky/detske (2).jpg",
+  toddler: "/images/Deticky/detske (3).jpg",
+  childGirl: "/images/Deticky/detske (4).jpg",
+  teenager: "/images/Deticky/detske (5).jpg",
+  maternity1: "/images/Tehotenske/tehotenske (1).jpg",
+  maternity2: "/images/Tehotenske/tehotenske (2).jpg",
+  wedding1: "/images/Svadobne/svadobne (1).jpg",
+  wedding2: "/images/Svadobne/svadobne (2).jpg",
+  wedding3: "/images/Svadobne/svadobne (3).jpg",
+  family1: "/images/Rodinne/rodinne (1).jpg",
+  family2: "/images/Rodinne/rodinne (2).jpg",
+  exterior1: "/images/Exterier/exterier (1).jpg",
+  exterior2: "/images/Exterier/exterier (25).jpg",
+  studio1: "/images/Atelier/Atelier (1).jpg",
+  studio2: "/images/Atelier/Atelier (2).jpg",
   photographer: "/images/o-mne/zuzana-kondekova.jpg",
 };
 
@@ -28,56 +28,69 @@ export type GalleryImage = {
   category: string;
 };
 
-// Build gallery from all real images
-const makeImages = (
-  category: string,
-  folder: string,
-  prefix: string,
-  count: number,
-  altLabel: string
-): GalleryImage[] =>
-  Array.from({ length: count }, (_, i) => ({
-    id: `${category}-${i + 1}`,
-    src: `/images/${folder}/${prefix}-${i + 1}.jpg`,
-    alt: `${altLabel} ${i + 1}`,
-    category,
-  }));
-
 export const galleryImages: GalleryImage[] = [
-  ...Array.from({ length: 52 }, (_, i) => ({
+  // Novorodenecke: 53 images
+  ...Array.from({ length: 53 }, (_, i) => ({
     id: `novorodenci-${i + 1}`,
-    src: `/images/novorodenci/novorodenci (${i + 1}).jpg`,
+    src: `/images/Novorodenecke/novorodenecke (${i + 1}).jpg`,
     alt: `Novorodenec ${i + 1}`,
     category: "novorodenci",
   })),
-  ...makeImages("deti", "deti-do-1-roka", "deti-do-1-roka", 18, "Bábätko"),
-  ...makeImages("deti", "deti-od-1-roka", "deti-od-1-roka", 18, "Dieťa"),
-  ...makeImages("deti", "deti", "deti", 17, "Dieťa"),
-  ...makeImages("deti", "deti-15", "deti-15", 13, "Tínedžer"),
-  ...[
-    "01","013","025","04","06","08","1","10","11","13","14","15",
-    "16","17","18","2","20","21","24","25","27","29","3","30","31",
-    "4","5","6","7","9",
-  ].map((name, i) => ({
+  // Deticky: 60 images
+  ...Array.from({ length: 60 }, (_, i) => ({
+    id: `deti-${i + 1}`,
+    src: `/images/Deticky/detske (${i + 1}).jpg`,
+    alt: `Dieťa ${i + 1}`,
+    category: "deti",
+  })),
+  // Rodinne: 31 images
+  ...Array.from({ length: 31 }, (_, i) => ({
     id: `rodina-${i + 1}`,
-    src: `/images/rodinne/${name}.jpg`,
+    src: `/images/Rodinne/rodinne (${i + 1}).jpg`,
     alt: `Rodinné fotenie ${i + 1}`,
     category: "rodina",
   })),
+  // Tehotenske: 28 images
   ...Array.from({ length: 28 }, (_, i) => ({
     id: `tehotenske-${i + 1}`,
-    src: `/images/tehotenske/tehotenske (${i + 1}).jpg`,
+    src: `/images/Tehotenske/tehotenske (${i + 1}).jpg`,
     alt: `Tehotenské fotenie ${i + 1}`,
     category: "tehotenske",
   })),
-  ...makeImages("svadobne", "svadobne", "svadobne", 60, "Svadobné fotenie"),
-  ...makeImages("exterier", "exterier", "exterier", 13, "Exteriér"),
-  ...makeImages("atelier", "atelier", "atelier", 18, "Ateliér"),
+  // Svadobne: 114 images
+  ...Array.from({ length: 114 }, (_, i) => ({
+    id: `svadobne-${i + 1}`,
+    src: `/images/Svadobne/svadobne (${i + 1}).jpg`,
+    alt: `Svadobné fotenie ${i + 1}`,
+    category: "svadobne",
+  })),
+  // Exterier: image 1 then 25–49 (26 images total)
+  ...[1, ...Array.from({ length: 25 }, (_, i) => i + 25)].map((n, i) => ({
+    id: `exterier-${i + 1}`,
+    src: `/images/Exterier/exterier (${n}).jpg`,
+    alt: `Exteriér ${i + 1}`,
+    category: "exterier",
+  })),
+  // Atelier: 35 images (capital A in filename)
+  ...Array.from({ length: 35 }, (_, i) => ({
+    id: `atelier-${i + 1}`,
+    src: `/images/Atelier/Atelier (${i + 1}).jpg`,
+    alt: `Ateliér ${i + 1}`,
+    category: "atelier",
+  })),
+  // Vianocne: 38 images (folder Vianocne, prefix vianoce)
   ...Array.from({ length: 38 }, (_, i) => ({
     id: `vianocne-${i + 1}`,
-    src: `/images/vianocne/vianocne (${i + 1}).jpg`,
+    src: `/images/Vianocne/vianoce (${i + 1}).jpg`,
     alt: `Vianočné fotenie ${i + 1}`,
     category: "vianocne",
+  })),
+  // Portret: images 15–30 (16 images)
+  ...Array.from({ length: 16 }, (_, i) => ({
+    id: `portret-${i + 1}`,
+    src: `/images/Portret/portret (${i + 15}).jpg`,
+    alt: `Portrét ${i + 1}`,
+    category: "portret",
   })),
 ];
 
@@ -85,10 +98,11 @@ export const portfolioCategories = [
   { key: "all", label: "Všetko" },
   { key: "novorodenci", label: "Novorodenci" },
   { key: "deti", label: "Deti" },
-  { key: "rodina", label: "Rodina" },
   { key: "tehotenske", label: "Tehotenské" },
+  { key: "rodina", label: "Rodinné" },
   { key: "svadobne", label: "Svadobné" },
   { key: "exterier", label: "Exteriér" },
   { key: "atelier", label: "Ateliér" },
   { key: "vianocne", label: "Vianočné" },
+  { key: "portret", label: "Portrét" },
 ];

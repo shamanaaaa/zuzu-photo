@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
-import { X } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 import { galleryImages, portfolioCategories } from "../data/images";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
@@ -40,46 +40,40 @@ export function Portfolio() {
       {/* Filter Tabs */}
       <section className="sticky top-16 sm:top-20 z-30 bg-background/95 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-2 overflow-x-auto py-4 scrollbar-hide">
-            {portfolioCategories.map((cat) => (
-              <button
-                key={cat.key}
-                onClick={() => setActiveFilter(cat.key)}
-                className={`shrink-0 px-4 py-2 rounded-full text-sm transition-all ${
-                  activeFilter === cat.key
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-muted-foreground hover:bg-accent"
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+          <div className="relative">
+            <div className="flex gap-2 overflow-x-auto py-4 scrollbar-hide pr-10">
+              {portfolioCategories.map((cat) => (
+                <button
+                  key={cat.key}
+                  onClick={() => setActiveFilter(cat.key)}
+                  className={`shrink-0 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm transition-all ${
+                    activeFilter === cat.key
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-muted-foreground hover:bg-accent"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+            <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-background to-transparent pointer-events-none" />
           </div>
-        </div>
-      </section>
-
-      {/* Category Links */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <div className="flex flex-wrap gap-2">
-          {[
-            { to: "/portfolio/novorodenci", label: "Novorodenci" },
-            { to: "/portfolio/deti-do-1-roka", label: "Deti do 1 roka" },
-            { to: "/portfolio/deti-od-1-roka", label: "Deti od 1 roka" },
-            { to: "/portfolio/deti-15", label: "Deti 15+" },
-            { to: "/portfolio/tehotenske", label: "Tehotenské" },
-            { to: "/portfolio/rodinne", label: "Rodinné" },
-            { to: "/portfolio/svadobne", label: "Svadobné" },
-            { to: "/portfolio/exterier", label: "Exteriér" },
-            { to: "/portfolio/vianocne", label: "Vianočné" },
-          ].map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="text-xs px-3 py-1.5 rounded-full border border-border text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {activeFilter !== "all" && (() => {
+            const slug = activeFilter === "rodina" ? "rodinne" : activeFilter;
+            const cat = portfolioCategories.find((c) => c.key === activeFilter);
+            return (
+              <div className="pb-3 flex items-center gap-1.5 text-sm text-muted-foreground">
+                <span>Viac o kategórii:</span>
+                <Link
+                  to={`/portfolio/${slug}`}
+                  className="inline-flex items-center gap-1 text-primary hover:text-primary/80 transition-colors"
+                >
+                  {cat?.label}
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            );
+          })()}
         </div>
       </section>
 
