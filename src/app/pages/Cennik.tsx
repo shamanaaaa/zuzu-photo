@@ -6,7 +6,7 @@ const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-50px" },
-  transition: { duration: 0.6, ease: "easeOut" },
+  transition: { duration: 0.6, ease: "easeOut" as const },
 };
 
 type PricingItem = {
@@ -27,84 +27,68 @@ type PricingCard = {
 const pricingCards: PricingCard[] = [
   {
     title: "Novorodenecké fotografovanie",
-    subtitle: "Od narodenia po 1 mesiac",
-    price: "100 €",
+    subtitle: "Najlepšie do 14 – 21 dní od narodenia",
+    price: "130 €",
     items: [
       { label: "Počet upravených záberov", value: "6" },
-      { label: "Formát tlače", value: "10 × 15 cm" },
+      { label: "Formát tlače", value: "13 × 18 cm" },
       { label: "Retušovanie", value: "✓", included: true },
-      { label: "Kartička novorodenca (10 × 15 cm)", value: "✓", included: true },
-      { label: "Každý ďalší záber", value: "+ 10 €" },
-      { label: "VIP spracovanie", value: "+ 20 €" },
-      { label: "Spracovanie", value: "cca 1 mesiac od výberu" },
+      { label: "Kartička novorodenca (13 × 18 cm)", value: "✓", included: true },
+      { label: "Každý ďalší záber", value: "+ 20 €" },
     ],
   },
   {
     title: "Rodinné / Deti",
-    price: "80 €",
+    price: "130 €",
     items: [
-      { label: "Počet upravených záberov", value: "6" },
-      { label: "Formát tlače", value: "10 × 15 cm" },
+      { label: "Počet upravených záberov", value: "8" },
+      { label: "Formát tlače", value: "13 × 18 cm" },
       { label: "Retušovanie", value: "✓", included: true },
-      { label: "Každý ďalší záber", value: "+ 10 €" },
-      { label: "Každá ďalšia začatá hodina", value: "+ 10 €" },
-      { label: "VIP spracovanie", value: "+ 20 €" },
-      { label: "Spracovanie", value: "cca 1 mesiac od výberu" },
+      { label: "Každý ďalší záber", value: "+ 15 €" },
     ],
   },
   {
-    title: "Tehotenské a portrétové",
-    price: "70 €",
+    title: "Tehotenské fotografovanie",
+    price: "80 €",
     items: [
       { label: "Počet upravených záberov", value: "5" },
-      { label: "Formát tlače", value: "10 × 15 cm" },
+      { label: "Formát tlače", value: "13 × 18 cm" },
       { label: "Retušovanie", value: "✓", included: true },
-      { label: "Každý ďalší záber", value: "+ 10 €" },
-      { label: "Každá ďalšia začatá hodina", value: "+ 10 €" },
-      { label: "VIP spracovanie", value: "+ 20 €" },
-      { label: "Spracovanie", value: "cca 1 mesiac od výberu" },
+      { label: "Tehotenské šaty k dispozícii", value: "✓", included: true },
+      { label: "Každý ďalší záber", value: "+ 15 €" },
     ],
   },
   {
     title: "MINI balíček",
-    price: "60 €",
+    price: "70 €",
     items: [
       { label: "Počet upravených záberov", value: "4" },
-      { label: "Formát tlače", value: "10 × 15 cm" },
+      { label: "Formát tlače", value: "13 × 18 cm" },
       { label: "Retušovanie", value: "✓", included: true },
-      { label: "Každý ďalší záber", value: "+ 10 €" },
-      { label: "Každá ďalšia začatá hodina", value: "+ 10 €" },
-      { label: "VIP spracovanie", value: "+ 20 €" },
-      { label: "Spracovanie", value: "cca 1 mesiac od výberu" },
+      { label: "Každý ďalší záber", value: "+ 15 €" },
     ],
   },
   {
     title: "MAXI balíček",
-    price: "100 €",
+    price: "130 €",
     recommended: true,
     items: [
       { label: "Počet upravených záberov", value: "10" },
-      { label: "Formát tlače", value: "10 × 15 cm" },
+      { label: "Formát tlače", value: "13 × 18 cm" },
       { label: "Retušovanie", value: "✓", included: true },
-      { label: "Každý ďalší záber", value: "+ 10 €" },
-      { label: "Každá ďalšia začatá hodina", value: "+ 10 €" },
-      { label: "VIP spracovanie", value: "+ 20 €" },
-      { label: "Spracovanie", value: "cca 1 mesiac od výberu" },
+      { label: "Každý ďalší záber", value: "+ 15 €" },
     ],
   },
   {
     title: "Vianočné fotografovanie",
-    price: "75 €",
+    price: "80 €",
     christmas: true,
     items: [
       { label: "Počet upravených záberov", value: "5" },
-      { label: "Formát tlače", value: "10 × 15 cm" },
-      { label: "Pohľadnica", value: "2 × ZDARMA", included: true },
-      { label: "Foto-magnetka", value: "4 €" },
-      { label: "Kalendár A3 zalaminovaný", value: "10 €" },
-      { label: "Každý ďalší záber", value: "+ 10 €" },
-      { label: "VIP spracovanie", value: "+ 20 €" },
-      { label: "Spracovanie", value: "cca 1 mesiac od výberu" },
+      { label: "Formát tlače", value: "13 × 18 cm" },
+      { label: "Pohľadnica 13 × 18 cm", value: "2 × ZDARMA", included: true },
+      { label: "Kalendár A3 zalaminovaný", value: "+ 10 €" },
+      { label: "Každý ďalší záber", value: "+ 15 €" },
     ],
   },
 ];
@@ -121,8 +105,7 @@ const weddingPackages = [
       gratulacie: true,
       hostina: false,
       fotografie: "cca 600",
-      upravene: "30",
-      vip: "+ 75 €",
+      upravene: "30 (13 × 18 cm)",
       spracovanie: "cca 6 týždňov",
     },
   },
@@ -137,8 +120,7 @@ const weddingPackages = [
       gratulacie: true,
       hostina: "do 1. tanca",
       fotografie: "cca 1 000",
-      upravene: "40",
-      vip: "+ 75 €",
+      upravene: "40 (13 × 18 cm)",
       spracovanie: "cca 6 týždňov",
     },
   },
@@ -153,8 +135,7 @@ const weddingPackages = [
       gratulacie: true,
       hostina: "do cca 1:00",
       fotografie: "cca 1 800",
-      upravene: "60",
-      vip: "+ 75 €",
+      upravene: "60 (13 × 18 cm)",
       spracovanie: "cca 6 týždňov",
     },
   },
@@ -168,8 +149,7 @@ const weddingFeatureLabels = [
   { key: "gratulacie", label: "Gratulácie + rodina" },
   { key: "hostina", label: "Hostina" },
   { key: "fotografie", label: "Počet fotografií (DVD/USB)" },
-  { key: "upravene", label: "Upravené fotografie (tlač 10×15)" },
-  { key: "vip", label: "VIP spracovanie" },
+  { key: "upravene", label: "Upravené fotografie" },
   { key: "spracovanie", label: "Spracovanie" },
 ];
 
@@ -203,7 +183,7 @@ export function Cennik() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className={`relative rounded-2xl border p-6 sm:p-8 ${
+              className={`relative rounded-2xl border p-6 sm:p-8 flex flex-col ${
                 card.recommended
                   ? "border-primary bg-primary/5 shadow-lg ring-2 ring-primary/20"
                   : "border-border bg-card shadow-sm"
@@ -227,11 +207,9 @@ export function Cennik() {
               >
                 {card.title}
               </h3>
-              {card.subtitle && (
-                <p className="text-sm text-muted-foreground mb-4">
-                  {card.subtitle}
-                </p>
-              )}
+              <p className="text-sm text-muted-foreground mb-4 min-h-[1.25rem]">
+                {card.subtitle ?? ""}
+              </p>
 
               <div className="mb-6">
                 <span
@@ -268,7 +246,7 @@ export function Cennik() {
 
               <Link
                 to="/kontakt"
-                className={`block text-center mt-6 py-2.5 rounded-full text-sm tracking-wide transition-colors ${
+                className={`block text-center mt-auto pt-6 py-2.5 rounded-full text-sm tracking-wide transition-colors ${
                   card.recommended
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
                     : "border border-primary text-primary hover:bg-primary/5"
@@ -279,6 +257,86 @@ export function Cennik() {
             </motion.div>
           ))}
         </div>
+      </section>
+
+      {/* Add-ons */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <motion.div
+          {...fadeUp}
+          className="bg-card rounded-2xl border border-border p-6 sm:p-8"
+        >
+          <div className="flex items-center gap-2 mb-5">
+            <Info className="w-5 h-5 text-primary" />
+            <h3
+              className="text-lg text-foreground"
+              style={{ fontFamily: "var(--font-family-heading)" }}
+            >
+              Doplnky & informácie
+            </h3>
+          </div>
+          <ul className="space-y-3 text-sm">
+            <li className="flex items-start gap-3">
+              <Usb className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+              <span>
+                <strong>USB kľúč</strong> (tvar fotoaparátu) — 13 € / kus{" "}
+                <em className="text-muted-foreground">
+                  (prineste si ho na ďalšie fotografovanie)
+                </em>
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-4 h-4 shrink-0 flex items-center justify-center text-primary">✕</span>
+              <span><strong>Neupravené zábery</strong> neposkytujeme</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-4 h-4 shrink-0 flex items-center justify-center text-primary">⚡</span>
+              <span>
+                <strong>VIP spracovanie</strong> — urýchlené doručenie (+ 20 € / + 75 € pri svadbách)
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-4 h-4 shrink-0 flex items-center justify-center text-primary">🧲</span>
+              <span><strong>Foto-magnetka</strong> — 4 €</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="w-4 h-4 shrink-0 flex items-center justify-center text-primary">📅</span>
+              <span><strong>Kalendár A3 zalaminovaný</strong> — 10 €</span>
+            </li>
+          </ul>
+
+          <div className="mt-6 border-t border-border pt-6 space-y-4 text-sm text-muted-foreground leading-relaxed">
+            <div className="flex items-start gap-3">
+              <span className="shrink-0 text-base">📷</span>
+              <p>
+                USB kľúč je krásny, štýlový – v tvare fotoaparátu, akým Vás budem fotografovať, stojí 13 € / kus. Preto si ho vždy na ďalšie fotografovanie prineste, alebo ak máte svoj, prineste si ten.
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="shrink-0 text-base">👶</span>
+              <p>
+                Nemusíte si robiť starosti s balením pol domácnosti – máme pre vás kopec krásneho oblečenia, čeleniek, čiapočiek, dečiek a rekvizít, ktoré spolu vyberieme tak, aby vaše bábätko vyniklo v celej svojej dokonalosti.
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="shrink-0 text-base">🍼</span>
+              <p>
+                Na fotografovanie si prineste mliečko, plienočku na prebalenie, látkovú plienočku a deku na zabalenie bábätka. Ak je naučené na cumlík – aj ten zoberte 🙂
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="shrink-0 text-base">👗</span>
+              <p>
+                K dispozícii sú aj tehotenské šaty, ktoré môžete využiť – alebo si pokojne obliecť svoje obľúbené, v ktorých sa cítite krásna a sebavedomá.
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="shrink-0 text-base">🎨</span>
+              <p>
+                K dispozícii máme veľké množstvo rekvizít, foto-pozadí či oblečenia pre detičky.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Wedding Packages */}
@@ -419,76 +477,83 @@ export function Cennik() {
             ))}
           </div>
 
-          <motion.p
-            {...fadeUp}
-            className="text-center text-sm text-muted-foreground mt-6 italic"
-          >
-            K svadobným balíčkom sa pripočítavajú cestovné náklady pri
-            fotografovaní mimo Čadce.
-          </motion.p>
-        </div>
-      </section>
+          
 
-      {/* Add-ons */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <motion.div
-          {...fadeUp}
-          className="bg-card rounded-2xl border border-border p-6 sm:p-8"
-        >
-          <div className="flex items-center gap-2 mb-6">
-            <Info className="w-5 h-5 text-primary" />
-            <h3
-              className="text-lg text-foreground"
-              style={{ fontFamily: "var(--font-family-heading)" }}
-            >
-              Doplnky & informácie
-            </h3>
-          </div>
-          <ul className="space-y-3 text-sm">
-            <li className="flex items-start gap-3">
-              <Usb className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-              <span>
-                <strong>USB kľúč</strong> (tvar fotoaparátu) — 10 € / kus{" "}
-                <em className="text-muted-foreground">
-                  (prineste si ho na ďalšie fotografovanie)
-                </em>
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-4 h-4 shrink-0 flex items-center justify-center text-primary">
-                ✕
-              </span>
-              <span>
-                <strong>Neupravené zábery</strong> neposkytujeme
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-4 h-4 shrink-0 flex items-center justify-center text-primary">
-                ⚡
-              </span>
-              <span>
-                <strong>VIP spracovanie</strong> — urýchlené doručenie (+ 20 € /
-                + 75 € pri svadbách)
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-4 h-4 shrink-0 flex items-center justify-center text-primary">
-                🧲
-              </span>
-              <span>
-                <strong>Foto-magnetka</strong> — 4 €
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-4 h-4 shrink-0 flex items-center justify-center text-primary">
-                📅
-              </span>
-              <span>
-                <strong>Kalendár A3 zalaminovaný</strong> — 10 €
-              </span>
-            </li>
-          </ul>
-        </motion.div>
+          {/* Wedding package details */}
+          <motion.div
+            {...fadeUp}
+            className="mt-8 space-y-4"
+          >
+            <div className="bg-card rounded-2xl border border-border p-6 sm:p-8 space-y-4 text-sm leading-relaxed">
+              <div className="space-y-2">
+                <h4
+                  className="text-base text-foreground"
+                  style={{ fontFamily: "var(--font-family-heading)" }}
+                >
+                  Balíček 2 – 700 €
+                </h4>
+                <p className="text-muted-foreground">
+                  Balíček zahŕňa fotografovanie príprav nevesty, ženícha,
+                  fotografovanie v kostole alebo na úrade, gratulácie po obrade
+                  a spoločné fotografie s rodinou. Portrétové fotografovanie
+                  v trvaní 1 hodiny pred alebo po obrade v exteriéri,
+                  fotografovanie v sále po prvý tanec mladomanželov.
+                </p>
+                <p className="text-muted-foreground">
+                  Výstupom je cca 1 000 fotografií na DVD, 40 upravených
+                  fotografií s tlačou vo formáte 13 × 18 cm. USB kľúč je krásny,
+                  štýlový – v tvare fotoaparátu, akým Vás budem fotografovať.
+                  Všetky ostatné zábery sú bez retuše.
+                </p>
+              </div>
+
+              <div className="border-t border-border/50 pt-4 space-y-2">
+                <h4
+                  className="text-base text-foreground"
+                  style={{ fontFamily: "var(--font-family-heading)" }}
+                >
+                  Balíček 3 – 1 000 €
+                </h4>
+                <p className="text-muted-foreground">
+                  Balíček zahŕňa fotografovanie príprav nevesty, ženícha,
+                  portrétové fotografovanie v trvaní 1 hodiny pred alebo po
+                  obrade v exteriéri, fotografovanie obradu na úrade alebo
+                  v kostole, gratulácie po obrade a spoločné fotografie s rodinou
+                  pred kostolom a hostina do cca 1 hodiny v noci.
+                </p>
+                <p className="text-muted-foreground">
+                  Výstupom je cca 1 800 fotografií na DVD/USB, 60 upravených
+                  fotografií z celého dňa, tlač vo formáte 13 × 18 cm. USB kľúč
+                  je krásny, štýlový – v tvare fotoaparátu, akým Vás budem
+                  fotografovať. Všetky ostatné zábery sú bez retuše.
+                </p>
+              </div>
+
+              <div className="border-t border-border/50 pt-4 space-y-3">
+                <p className="text-muted-foreground">
+                  K balíčkom sa pripočítavajú cestovné náklady v prípade, ak je
+                  fotografovanie, prípadne hostina mimo Čadce.
+                </p>
+                <p className="text-muted-foreground">
+                  Svadba patrí medzi najkrajšie a najvýznamnejšie dni v živote.
+                  Každý pohľad, úsmev, dotyk a slza šťastia si zaslúžia zostať
+                  navždy zachované. Naším cieľom je vytvoriť fotografie, ktoré
+                  budú nielen krásne, ale aj nadčasové – spomienky, ktoré si
+                  budete s radosťou pozerať aj o mnoho rokov.
+                </p>
+                <p className="text-muted-foreground">
+                  Fotíme s citom a trpezlivosťou, aby ste sa cítili prirodzene
+                  a uvoľnene.
+                </p>
+                <blockquote className="border-l-4 border-primary/30 pl-4 italic text-foreground">
+                  „Svadbu fotografujeme dvaja – ja a môj partner a priateľ –
+                  aby sme zachytili všetky momenty z rôznych uhlov a nič
+                  dôležité vám neuniklo."
+                </blockquote>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
     </div>
   );

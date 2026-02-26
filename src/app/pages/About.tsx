@@ -40,7 +40,7 @@ export function About() {
             transition={{ delay: 0.1 }}
             className="text-muted-foreground text-lg"
           >
-            Zuzana Ďurná-Kondeková: K fotografovaniu ma inšpirovali moje dve krásne deti
+            Fotografovanie je pre mňa viac než práca – je to radosť chodiť do práce a zároveň spôsob, ako zastaviť čas.
           </motion.p>
         </div>
       </section>
@@ -56,11 +56,11 @@ export function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="rounded-2xl overflow-hidden aspect-[3/4] shadow-lg">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
               <ImageWithFallback
                 src={images.photographer}
                 alt="Zuzana Ďurná-Kondeková"
-                className="w-full h-full object-cover"
+                className="w-full h-auto"
               />
             </div>
             {/* Decorative element */}
@@ -78,13 +78,25 @@ export function About() {
           >
             <div className="space-y-5 text-foreground leading-relaxed">
               <p>
-                Zuzana Ďurná-Kondeková sa fotografovaniu venuje od svojich stredoškolských čias. Po materskej dovolenke si splnila sen a založila si vlastný fotoateliér. Vďaka svojim dcéram nadšene a najradšej fotografuje detský svet okolo seba.
+                Fotografovanie je pre mňa viac než práca – je to radosť chodiť do práce a zároveň spôsob, ako zastaviť čas a uchovať chvíle, ktoré sa už nikdy nevrátia.
               </p>
               <p>
-                Okrem študijného odboru pasiar (umelecko-remeselné spracovanie kovov) ju zaujímali aj hodiny fotografie. Má otvorený vlastný ateliér v Čadci, ktorý je bohato vybavený rôznymi rekvizitami, ktoré nielen nakupuje, ale aj vlastnoručne vyrába — a tým sú jej fotografie originálne.
+                Moju cestu k fotografovaniu ovplyvnili moje dve krásne deti a tiež môj otec, fotograf a dokumentarista, ktorý mi daroval prvý fotoaparát a naučil ma vidieť svet cez objektív. Okrem štúdia na umeleckej škole – odboru pasiar (umelecko-remeselné spracovanie kovov) – ma fascinovali aj hodiny fotografie. Po skončení štúdia som niekoľko rokov pracovala ako grafička a zároveň fotografovala produktové fotografie, čo mi poskytlo cenný cit pre vizuál a detaily. Po materskej dovolenke som si splnila sen a otvorila vlastný ateliér.
               </p>
               <p>
-                Ďalšou inšpiráciou bol jej otec, fotograf, dokumentarista a vydavateľ Juraj Ďurný, ktorý jej daroval prvý fotoaparát a zasvätil ju do tajov fotografovania. V jeho reklamnej agentúre pracovala ako grafička niekoľko rokov. Po skončení materskej dovolenky si otvorila vlastný ateliér, kde sa naplno venuje svojej tvorbe. Okrem fotografovania detí, novorodencov a portrétovej fotografie sa venuje aj svadobnej, tehotenskej, rodinnej, fotografovaniu modeliek, interiérovej a exteriérovej fotografii.
+                Už viac ako 15 rokov je každé fotenie pre mňa jedinečné – od prvých dní života až po detičky, rodiny či tehotné maminky. Novorodenci sú pre mňa špeciálni, no všetky vekové kategórie vítam s rovnakou láskou. Deti ma pri fotografovaní fascinujú – v okamihu sa dokážu stať kuchárikom, hudobníkom, kominárikom či manažérkou, alebo princeznou… no pritom stále ostávajú deťmi – čistými a nevinnými.
+              </p>
+              <p>
+                Je dôležité, aby na fotografii bolo len to, čo tam má byť. Skvelé je, keď fotografii dokážem dať dušu, ktorá vás pohľadom na ňu chytí za srdce.
+              </p>
+              <p>
+                Fotenie prebieha v útulnom prostredí rodinného domu v Čadci – s pohodlným parkovaním priamo na mieste, ateliérom aj krásnou terasou so záhradou, kde sa dá fotografovať aj vonku.
+              </p>
+              <p>
+                Za tie roky nevznikli len tisíce fotografií, ale aj krásne priateľstvá. Sledujem, ako z vašich novorodencov rastú školáci či mladí dospelí, a veľmi si vážim vašu dôveru. Teším sa na každý ďalší príbeh, ktorý spoločne zachytíme.
+              </p>
+              <p className="font-medium">
+                Objednávky: +421 907 533 373
               </p>
             </div>
           </motion.div>

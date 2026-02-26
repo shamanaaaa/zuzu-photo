@@ -20,13 +20,18 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group" onClick={() => setMobileOpen(false)}>
-            <Camera className="w-6 h-6 text-primary transition-transform group-hover:rotate-12" />
-            <span
-              className="text-xl sm:text-2xl tracking-wide text-foreground"
-              style={{ fontFamily: "var(--font-family-heading)" }}
-            >
-              Zuzu Photo
+          <Link to="/" className="flex flex-col group" onClick={() => setMobileOpen(false)}>
+            <div className="flex items-center gap-2">
+              <Camera className="w-6 h-6 text-primary transition-transform group-hover:rotate-12" />
+              <span
+                className="text-xl sm:text-2xl tracking-wide text-foreground"
+                style={{ fontFamily: "var(--font-family-heading)" }}
+              >
+                Zuzu Photo
+              </span>
+            </div>
+            <span className="hidden sm:block text-[10px] text-muted-foreground tracking-widest uppercase pl-8 -mt-0.5">
+              svetlo · emócia · prirodzenosť
             </span>
           </Link>
 

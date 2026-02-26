@@ -18,6 +18,8 @@ export const images = {
   exterior2: "/images/Exterier/exterier (25).jpg",
   studio1: "/images/Atelier/Atelier (1).jpg",
   studio2: "/images/Atelier/Atelier (2).jpg",
+  vianocne1: "/images/Vianocne/vianoce (1).jpg",
+  detske15: "/images/Deticky/detske (15).jpg",
   photographer: "/images/o-mne/zuzana-kondekova.jpg",
 };
 

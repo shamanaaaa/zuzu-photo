@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Camera, Phone, Mail, MapPin, Facebook } from "lucide-react";
+import { Camera, Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -86,15 +86,35 @@ export function Footer() {
             >
               Sledujte ma
             </h4>
-            <a
-              href="https://www.facebook.com/ZuzuPhotoGraphic"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-[#b08968] transition-colors"
-            >
-              <Facebook className="w-5 h-5" />
-              <span>ZuzuPhotoGraphic</span>
-            </a>
+            <div className="space-y-3">
+              <a
+                href="https://www.facebook.com/ZuzuPhotoGraphic/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-white/60 hover:text-[#b08968] transition-colors"
+              >
+                <Facebook className="w-5 h-5 shrink-0" />
+                <span>ZuzuPhotoGraphic</span>
+              </a>
+              <a
+                href="https://www.instagram.com/zuzana_kondekova_zuzu_photo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-white/60 hover:text-[#b08968] transition-colors"
+              >
+                <Instagram className="w-5 h-5 shrink-0" />
+                <span>zuzana_kondekova_zuzu_photo</span>
+              </a>
+              <a
+                href="https://wa.me/421907533373"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-white/60 hover:text-[#b08968] transition-colors"
+              >
+                <Phone className="w-5 h-5 shrink-0" />
+                <span>WhatsApp: 0907 533 373</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

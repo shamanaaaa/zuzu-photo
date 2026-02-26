@@ -2,8 +2,8 @@
 
 :root {
   --font-size: 16px;
-  --font-family-heading: 'Playfair Display', Georgia, serif;
-  --font-family-body: 'Lato', -apple-system, sans-serif;
+  --font-family-heading: 'Nunito', -apple-system, sans-serif;
+  --font-family-body: 'Nunito', -apple-system, sans-serif;
   --background: #fdf9f6;
   --foreground: #3d2c2c;
   --card: #ffffff;

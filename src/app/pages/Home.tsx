@@ -15,44 +15,51 @@ const services = [
   {
     icon: Baby,
     title: "Novorodenci",
-    desc: "Tých prvých 14 dní je najkrajších. Zachyťme ich spolu.",
+    desc: "Prvé dni života sú najkrehkejšie a najzázračnejšie – maličké pršteky, sladké zívanie a vôňa bábätka, na ktorú sa nezabúda. Zachyťme tieto neopakovateľné chvíle skôr, než sa z nich stanú len spomienky.",
     image: images.newborn1,
     to: "/portfolio/novorodenci",
   },
   {
     icon: Users,
     title: "Deti & Rodina",
-    desc: "Spontánne, hravé, plné emócií — práve také fotografie milujete.",
+    desc: "Detstvo je najkrajšie a zároveň najrýchlejšie obdobie života. Každý úsmev, každý pohľad a každý malý pokrok si zaslúži zostať navždy zachovaný.",
     image: images.toddler,
     to: "/portfolio/deti",
   },
   {
     icon: Heart,
     title: "Tehotenské",
-    desc: "Oslávte toto výnimočné obdobie krásnymi portrétmi.",
+    desc: "Tehotenstvo je jedinečné, magické a neopakovateľné obdobie v živote ženy. Čas, keď pod srdcom nosíte celý svoj svet.",
     image: images.maternity1,
     to: "/portfolio/tehotenske",
   },
   {
     icon: Gem,
     title: "Svadobné",
-    desc: "Váš veľký deň si zaslúži dokonalé spomienky.",
+    desc: "Keď sa stretnú dve srdcia a rozhodnú sa biť ako jedno. Nech tieto okamihy zostanú živé navždy.",
     image: images.wedding1,
     to: "/portfolio/svadobne",
   },
   {
     icon: Building2,
     title: "Ateliér",
-    desc: "Luxusne vybavený štúdio priestor so stovkami rekvizít.",
+    desc: "ZUZU photo-graphic – svetlo, emócia a prirodzenosť na jednom mieste. Fotenie v ateliéri, rozkvitnutej záhrade aj na slnečnej terase pre vaše výnimočné fotografie.",
     image: images.studio1,
     to: "/atelier",
   },
   {
     icon: TreePine,
     title: "Exteriér",
-    desc: "Príroda ako kulisa — nádherné fotografie vonku.",
+    desc: "Najkrajšie momenty často vznikajú prirodzene – vonku, v pohybe, v smiechu, na čerstvom vzduchu. Prírodné svetlo, zeleň a pokojné prostredie vytvárajú dokonalú kulisu pre nadčasové fotografie.",
     image: images.exterior1,
     to: "/portfolio/exterier",
+  },
+  {
+    icon: Star,
+    title: "Vianočné",
+    desc: "Vianoce sú časom kúziel, smiechu a spoločných spomienok, ktoré zostávajú navždy.",
+    image: images.vianocne1,
+    to: "/portfolio/vianocne",
   },
 ];
 
@@ -98,11 +105,12 @@ export function Home() {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6"
               style={{ fontFamily: "var(--font-family-heading)" }}
             >
-              Zachytím okamihy, ktoré zostanú navždy
+              Okamih trvá sekundu.<br />
+              Spomienka celý život.
             </h1>
             <p className="text-base sm:text-lg text-white/80 mb-8 leading-relaxed">
-              Profesionálne fotografovanie v ateliéri aj exteriéri v Čadci.
-              Novorodenci, deti, tehotenstvo, rodina, svadby.
+              Profesionálne fotografovanie v Čadci – v útulnom rodinnom dome so záhradou, terasou a pohodlným parkovaním.
+              Novorodenci, deti, tehotenstvo, rodina, Vianoce, svadby a produktové zábery.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -130,8 +138,7 @@ export function Home() {
               className="text-xl sm:text-2xl text-foreground leading-relaxed italic"
               style={{ fontFamily: "var(--font-family-heading)" }}
             >
-              Volám sa Zuzka a fotografie sú moja vášeň. Každý záber musí mať
-              dušu — taký, ktorý vás chytí za srdce. Vitajte vo svete Zuzu Photo.
+              Volám sa Zuzka a fotografovanie je pre mňa viac než práca – je to radosť chodiť do práce a zároveň spôsob, ako zastaviť čas a uchovať chvíle, ktoré sa už nikdy nevrátia. Vitajte vo svete Zuzu Photo.
             </p>
             <Link
               to="/o-mne"
@@ -295,8 +302,8 @@ export function Home() {
       <section className="relative py-20 sm:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <ImageWithFallback
-            src={images.studio2}
-            alt="Ateliér"
+            src={images.detske15}
+            alt="Fotografovanie"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-[#3d2c2c]/75" />
@@ -307,10 +314,10 @@ export function Home() {
               className="text-2xl sm:text-3xl md:text-4xl text-white mb-4"
               style={{ fontFamily: "var(--font-family-heading)" }}
             >
-              Pripravení zachytiť váš výnimočný moment?
+              Pripravení zachytiť svoj výnimočný okamih a uchovať ho na celý život?
             </h2>
             <p className="text-white/70 mb-8 text-base sm:text-lg">
-              Kontaktujte ma a dohodneme si termín, ktorý vám vyhovuje.
+              Profesionálne fotografovanie v Čadci – ateliér, rozkvitnutá záhrada aj slnečná terasa pre vaše výnimočné fotografie. Parkovanie priamo na mieste.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
