@@ -93,6 +93,9 @@ export function About() {
                 Fotenie prebieha v útulnom prostredí rodinného domu v Čadci – s pohodlným parkovaním priamo na mieste, ateliérom aj krásnou terasou so záhradou, kde sa dá fotografovať aj vonku.
               </p>
               <p>
+                Môžete si vybrať atmosféru, ktorá vám najviac vyhovuje, alebo kombinovať interiér s exteriérom – a to všetko pokojne a pohodlne, s úžasnou kávou alebo čajom v ruke.
+              </p>
+              <p>
                 Za tie roky nevznikli len tisíce fotografií, ale aj krásne priateľstvá. Sledujem, ako z vašich novorodencov rastú školáci či mladí dospelí, a veľmi si vážim vašu dôveru. Teším sa na každý ďalší príbeh, ktorý spoločne zachytíme.
               </p>
               <p className="font-medium">
@@ -112,7 +115,7 @@ export function About() {
               className="text-xl sm:text-2xl text-foreground italic leading-relaxed mb-4"
               style={{ fontFamily: "var(--font-family-heading)" }}
             >
-              „Fotografia musí mať dušu — takú, ktorá vás chytí za srdce."
+              „Fotografia musí mať dušu — takú, ktorá vás chytí za srdce a na chvíľu zastaví čas.."
             </blockquote>
             <p className="text-muted-foreground text-sm">
               — Zuzana Ďurná-Kondeková

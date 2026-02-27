@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 const navLinks = [
   { to: "/portfolio", label: "Portfólio" },
-  { to: "/atelier", label: "Ateliér" },
+  { to: "/portfolio/atelier", label: "Ateliér" },
   { to: "/cennik", label: "Cenník" },
   { to: "/o-mne", label: "O mne" },
   { to: "/kontakt", label: "Kontakt" },

@@ -1,17 +1,18 @@
 import { useParams, Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
-import { useState, useCallback, useRef } from "react";
-import { ArrowLeft, X } from "lucide-react";
+import { useState, useCallback, useRef, type ReactNode } from "react";
+import { ArrowLeft, X, Sun, Sparkles, Baby, Shirt, Car, Heart, Palette, UsbIcon, TreePine, Coffee } from "lucide-react";
 import { galleryImages } from "../data/images";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { type LucideIcon } from "lucide-react";
 
 type CategoryData = {
-  title: string;
-  intro: string | string[];
+  title: ReactNode;
+  intro: ReactNode | ReactNode[];
   filterKey: string;
   cta?: string;
   ctaLink?: string;
+  features?: { icon: LucideIcon; label: string }[];
 };
 
 const categoryMap: Record<string, CategoryData> = {
@@ -137,22 +138,52 @@ const categoryMap: Record<string, CategoryData> = {
       "Tešíme sa na Vás :)",
     ],
     filterKey: "atelier",
-    cta: "Viac o ateliéri",
-    ctaLink: "/atelier",
+    cta: "Pozrieť cenník",
+    ctaLink: "/cennik",
+    features: [
+      { icon: Sun, label: "Priestranný, svetlý ateliér v rodinnom dome" },
+      { icon: Sparkles, label: "Stovky rekvizít — neustále dopĺňaných" },
+      { icon: Baby, label: "Prebalovací pultík pre bábätká" },
+      { icon: Palette, label: "Výber foto-pozadí a oblečenia pre deti" },
+      { icon: Shirt, label: "Tehotenské šaty na zapožičanie" },
+      { icon: UsbIcon, label: "Štýlový USB kľúč v tvare fotoaparátu" },
+      { icon: Car, label: "Parkovanie priamo pred domom" },
+      { icon: Heart, label: "Príjemná, rodinná atmosféra" },
+      { icon: TreePine, label: "Súčasťou domu je terasa a krásna záhrada s prirodzeným svetlom a zeleňou" },
+      { icon: Coffee, label: "Káva, čaj a pohoda — pre celú rodinu počas fotenia" },
+    ],
   },
   portret: {
-    title: "Portrétové fotografovanie",
+    title: "Portrétne fotografovanie – exteriér, ateliér aj glamour štýl",
     intro: [
       "Každý z nás má v sebe jedinečnú iskru. Portrét nie je len fotografia tváre – je to zachytenie osobnosti, nálady, pohľadu a emócie, ktorá vás robí výnimočnými.",
       "Fotografovanie prebieha v exteriéri aj interiéri – v našej záhrade a na terase pri rodinnom dome, kde prirodzené svetlo vytvára mäkkú a lichotivú atmosféru. Vonkajšie prostredie dodáva portrétom ľahkosť, sviežosť a prirodzený charakter, zatiaľ čo útulný ateliér umožňuje kontrolované svetlo a štýlové pozadie pre rôzne typy portrétov.",
-      "Ponúkame široké spektrum portrétnych služieb – vždy s individuálnym prístupom:",
-      "• Rodinné a detské portréty – prirodzené, hravé a plné emócií",
-      "• Glamour a sexy portréty – ženské, sebavedomé, štýlové a odvážne",
-      "• Študentské tablo – moderné, kreatívne a osobné",
-      "• Profesionálne portréty – pre firmy, reklamu a marketing",
-      "• Billboardy a promo fotografie – dynamické, výrazné a vizuálne pôsobivé",
-      "• Oznámenia a oznamká – svadobné, promočné či iné výnimočné udalosti",
-      "• Osobné portréty – darčeky, umelecké fotografie, spomienky",
+      (
+        <>
+          <span className="font-bold">Ponúkame široké spektrum portrétnych služieb</span> – vždy s individuálnym prístupom:
+        </>
+      ),
+      (<>
+        • <span className="font-bold">Rodinné a detské portréty</span> – prirodzené, hravé a plné emócií
+      </>),
+      (<>
+        <span className="font-bold">• Glamour a sexy portréty</span> – ženské, sebavedomé, štýlové a odvážne
+      </>),
+      (<>
+        <span className="font-bold">• Študentské tablo</span> – moderné, kreatívne a osobné
+      </>),
+      (<>
+        <span className="font-bold">• Profesionálne portréty</span> – pre firmy, reklamu a marketing
+      </>),
+      (<>
+        <span className="font-bold">• Billboardy a promo fotografie</span> – dynamické, výrazné a vizuálne pôsobivé
+      </>),
+      (<>
+        <span className="font-bold">• Oznámenia a oznamká</span> – svadobné, promočné či iné výnimočné udalosti
+      </>),
+      (<>
+        <span className="font-bold">• Osobné portréty</span> – darčeky, umelecké fotografie, spomienky
+      </>),
       "Počas fotenia vás jemne navediem a poradím s pózovaním aj výrazom, aby ste sa cítili prirodzene, sebavedomo a uvoľnene. V pokojnej atmosfére, bez stresu, vznikajú tie najkrajšie a najautentickejšie zábery.",
       "Za 15 rokov praxe sme nazbierali množstvo skúseností aj rekvizít – stoličky, látky, kvety, doplnky a drobné detaily – aby každý portrét bol originálny a dokonale prispôsobený vašej osobnosti či štýlu.",
       "Fotografie tlačíme na kvalitný profesionálny papier alebo pripravíme digitálne verzie – nadčasové spomienky, ktoré vydržia roky, či vizuály pripravené na billboardy, tablo alebo tlačené materiály.",
@@ -216,8 +247,8 @@ export function PortfolioCategory() {
           </h1>
           <div className="text-muted-foreground leading-relaxed space-y-3">
             {Array.isArray(data.intro)
-              ? data.intro.map((p, i) => <p key={i}>{p}</p>)
-              : <p>{data.intro}</p>}
+              ? data.intro.map((p, i) => <p key={i} className="text-justify">{p}</p>)
+              : <p className="text-justify">{data.intro}</p>}
           </div>
           {data.cta && data.ctaLink && (
             <div className="mt-6 flex gap-4">
@@ -235,32 +266,40 @@ export function PortfolioCategory() {
               </Link>
             </div>
           )}
+          {data.features && (
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {data.features.map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-3 bg-background rounded-xl px-4 py-3 shadow-sm border border-border">
+                  <Icon className="w-5 h-5 text-primary shrink-0" />
+                  <span className="text-sm text-foreground">{label}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       {/* Gallery */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3 }}>
-          <Masonry gutter="16px">
-            {allImages.map((img, idx) => (
-              <motion.div
-                key={img.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="cursor-pointer group rounded-xl overflow-hidden"
-                onClick={() => openLightbox(idx)}
-              >
-                <ImageWithFallback
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </motion.div>
-            ))}
-          </Masonry>
-        </ResponsiveMasonry>
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+          {allImages.map((img, idx) => (
+            <motion.div
+              key={img.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              className="break-inside-avoid mb-4 cursor-pointer group rounded-xl overflow-hidden"
+              onClick={() => openLightbox(idx)}
+            >
+              <ImageWithFallback
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       {/* Lightbox */}

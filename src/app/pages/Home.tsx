@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
-import { Baby, Users, Heart, Gem, Building2, TreePine, Star, ArrowRight, Quote } from "lucide-react";
+import { Baby, Users, Heart, Gem, Building2, TreePine, Star, ArrowRight, Quote, Camera, Clock } from "lucide-react";
 import { images, galleryImages } from "../data/images";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
@@ -21,7 +21,7 @@ const services = [
   },
   {
     icon: Users,
-    title: "Deti & Rodina",
+    title: "Deti",
     desc: "Detstvo je najkrajšie a zároveň najrýchlejšie obdobie života. Každý úsmev, každý pohľad a každý malý pokrok si zaslúži zostať navždy zachovaný.",
     image: images.toddler,
     to: "/portfolio/deti",
@@ -29,7 +29,7 @@ const services = [
   {
     icon: Heart,
     title: "Tehotenské",
-    desc: "Tehotenstvo je jedinečné, magické a neopakovateľné obdobie v živote ženy. Čas, keď pod srdcom nosíte celý svoj svet.",
+    desc: "Tehotenstvo je jedinečné, magické a neopakovateľné obdobie v živote ženy. Čas, keď pod srdcom nosíte celý svoj svet. Teším sa, keď spolu zachytíme toto čarovné obdobie skôr, než sa z bruška ozve prvé „ahoj, mami“.   ",
     image: images.maternity1,
     to: "/portfolio/tehotenske",
   },
@@ -45,7 +45,7 @@ const services = [
     title: "Ateliér",
     desc: "ZUZU photo-graphic – svetlo, emócia a prirodzenosť na jednom mieste. Fotenie v ateliéri, rozkvitnutej záhrade aj na slnečnej terase pre vaše výnimočné fotografie.",
     image: images.studio1,
-    to: "/atelier",
+    to: "/portfolio/atelier",
   },
   {
     icon: TreePine,
@@ -58,8 +58,15 @@ const services = [
     icon: Star,
     title: "Vianočné",
     desc: "Vianoce sú časom kúziel, smiechu a spoločných spomienok, ktoré zostávajú navždy.",
-    image: images.vianocne1,
+    image: images.vianocne2,
     to: "/portfolio/vianocne",
+  },
+    {
+    icon: Star,
+    title: "Rodina",
+    desc: "Rodinné chvíle sú tie najcennejšie a fotografie sú spomienky, ktoré vydržia celé roky.",
+    image: images.family1,
+    to: "/portfolio/rodinne",
   },
 ];
 
@@ -102,15 +109,17 @@ export function Home() {
             className="max-w-xl"
           >
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-tight mb-6"
               style={{ fontFamily: "var(--font-family-heading)" }}
             >
-              Okamih trvá sekundu.<br />
-              Spomienka celý život.
+              Okamih trvá sekundu<br />
+              Spomienka celý život
             </h1>
-            <p className="text-base sm:text-lg text-white/80 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-white/80 mb-3 leading-relaxed">
               Profesionálne fotografovanie v Čadci – v útulnom rodinnom dome so záhradou, terasou a pohodlným parkovaním.
-              Novorodenci, deti, tehotenstvo, rodina, Vianoce, svadby a produktové zábery.
+            </p>
+            <p className="text-sm sm:text-base text-white/60 mb-8 leading-relaxed">
+              Novorodenci, deti, tehotenstvo, rodina, Vianoce, svadby a produktové zábery – fotografie, ktoré vám prinesú úsmev a budú krásnou spomienkou na celé roky.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -151,6 +160,56 @@ export function Home() {
         </div>
       </section>
 
+      {/* Why Choose Me */}
+      <section className="py-16 sm:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
+            {[
+              {
+                icon: Heart,
+                title: "S láskou a trpezlivosťou",
+                desc: "Každé fotenie je pre mňa jedinečný príbeh. Vytváram pokojnú atmosféru, v ktorej sa cítite uvoľnene.",
+              },
+              {
+                icon: Camera,
+                title: "Profesionálny výsledok",
+                desc: "Retušované fotografie, tlač a USB so zábermi – všetko pre váš dokonalý spomínkový album.",
+              },
+              {
+                icon: Clock,
+                title: "7 dní v týždni",
+                desc: "Prispôsobím sa vášmu voľnému času. Fotenia prebiehajú aj cez víkendy a sviatky.",
+              },
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
+                  className="flex flex-col items-center gap-4"
+                >
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <Icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3
+                    className="text-lg text-foreground"
+                    style={{ fontFamily: "var(--font-family-heading)" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Services Overview */}
       <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -187,7 +246,7 @@ export function Home() {
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#3d2c2c]/80 via-[#3d2c2c]/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#3d2c2c]/90 via-[#3d2c2c]/50 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
                       <div className="flex items-center gap-2 mb-2">
                         <Icon className="w-5 h-5 text-[#b08968]" />
@@ -198,7 +257,7 @@ export function Home() {
                           {service.title}
                         </h3>
                       </div>
-                      <p className="text-sm text-white/70 leading-relaxed">
+                      <p className="text-sm text-white/90 leading-relaxed">
                         {service.desc}
                       </p>
                     </div>

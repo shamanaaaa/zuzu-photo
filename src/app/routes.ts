@@ -3,7 +3,6 @@ import { Layout } from "./components/Layout";
 import { Home } from "./pages/Home";
 import { Portfolio } from "./pages/Portfolio";
 import { PortfolioCategory } from "./pages/PortfolioCategory";
-import { Atelier } from "./pages/Atelier";
 import { Cennik } from "./pages/Cennik";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
@@ -17,7 +16,6 @@ export const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: "portfolio", Component: Portfolio },
       { path: "portfolio/:category", Component: PortfolioCategory },
-      { path: "atelier", Component: Atelier },
       { path: "cennik", Component: Cennik },
       { path: "o-mne", Component: About },
       { path: "kontakt", Component: Contact },

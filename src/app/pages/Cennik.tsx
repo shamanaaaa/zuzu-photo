@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Check, Star, Info, Usb } from "lucide-react";
+import { u } from "node_modules/react-router/dist/development/index-react-server-client-MKTlCGL3.d.mts";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -32,6 +33,7 @@ const pricingCards: PricingCard[] = [
     items: [
       { label: "Počet upravených záberov", value: "6" },
       { label: "Formát tlače", value: "13 × 18 cm" },
+      { label: "USB kľúč (fotoaparát CANON)", value: "+ 13 €" },
       { label: "Retušovanie", value: "✓", included: true },
       { label: "Kartička novorodenca (13 × 18 cm)", value: "✓", included: true },
       { label: "Každý ďalší záber", value: "+ 20 €" },
@@ -43,6 +45,7 @@ const pricingCards: PricingCard[] = [
     items: [
       { label: "Počet upravených záberov", value: "8" },
       { label: "Formát tlače", value: "13 × 18 cm" },
+      { label: "USB kľúč (fotoaparát CANON)", value: "+ 13 €" },
       { label: "Retušovanie", value: "✓", included: true },
       { label: "Každý ďalší záber", value: "+ 15 €" },
     ],
@@ -53,6 +56,7 @@ const pricingCards: PricingCard[] = [
     items: [
       { label: "Počet upravených záberov", value: "5" },
       { label: "Formát tlače", value: "13 × 18 cm" },
+      { label: "USB kľúč (fotoaparát CANON)", value: "+ 13 €" },
       { label: "Retušovanie", value: "✓", included: true },
       { label: "Tehotenské šaty k dispozícii", value: "✓", included: true },
       { label: "Každý ďalší záber", value: "+ 15 €" },
@@ -64,6 +68,7 @@ const pricingCards: PricingCard[] = [
     items: [
       { label: "Počet upravených záberov", value: "4" },
       { label: "Formát tlače", value: "13 × 18 cm" },
+      { label: "USB kľúč (fotoaparát CANON)", value: "+ 13 €" },
       { label: "Retušovanie", value: "✓", included: true },
       { label: "Každý ďalší záber", value: "+ 15 €" },
     ],
@@ -75,6 +80,7 @@ const pricingCards: PricingCard[] = [
     items: [
       { label: "Počet upravených záberov", value: "10" },
       { label: "Formát tlače", value: "13 × 18 cm" },
+      { label: "USB kľúč (fotoaparát CANON)", value: "+ 13 €" },
       { label: "Retušovanie", value: "✓", included: true },
       { label: "Každý ďalší záber", value: "+ 15 €" },
     ],
@@ -86,6 +92,7 @@ const pricingCards: PricingCard[] = [
     items: [
       { label: "Počet upravených záberov", value: "5" },
       { label: "Formát tlače", value: "13 × 18 cm" },
+      { label: "USB kľúč (fotoaparát CANON)", value: "+ 13 €" },
       { label: "Pohľadnica 13 × 18 cm", value: "2 × ZDARMA", included: true },
       { label: "Kalendár A3 zalaminovaný", value: "+ 10 €" },
       { label: "Každý ďalší záber", value: "+ 15 €" },
@@ -106,6 +113,7 @@ const weddingPackages = [
       hostina: false,
       fotografie: "cca 600",
       upravene: "30 (13 × 18 cm)",
+      usb: true,
       spracovanie: "cca 6 týždňov",
     },
   },
@@ -121,6 +129,7 @@ const weddingPackages = [
       hostina: "do 1. tanca",
       fotografie: "cca 1 000",
       upravene: "40 (13 × 18 cm)",
+      usb: true,
       spracovanie: "cca 6 týždňov",
     },
   },
@@ -136,6 +145,7 @@ const weddingPackages = [
       hostina: "do cca 1:00",
       fotografie: "cca 1 800",
       upravene: "60 (13 × 18 cm)",
+      usb: true,
       spracovanie: "cca 6 týždňov",
     },
   },
@@ -150,6 +160,7 @@ const weddingFeatureLabels = [
   { key: "hostina", label: "Hostina" },
   { key: "fotografie", label: "Počet fotografií (DVD/USB)" },
   { key: "upravene", label: "Upravené fotografie" },
+  { key: "usb", label: "USB kľúč (fotoaparát CANON)" },
   { key: "spracovanie", label: "Spracovanie" },
 ];
 
@@ -402,18 +413,22 @@ export function Cennik() {
                     </tr>
                   ))}
                 </tbody>
+                <tfoot>
+                  <tr>
+                    <td className="p-4"></td>
+                    {weddingPackages.map((pkg) => (
+                      <td key={pkg.name} className="p-4 text-center">
+                        <Link
+                          to="/kontakt"
+                          className="inline-block px-6 py-2.5 border border-primary text-primary rounded-full hover:bg-primary/5 transition-colors text-sm"
+                        >
+                          Vybrať {pkg.name}
+                        </Link>
+                      </td>
+                    ))}
+                  </tr>
+                </tfoot>
               </table>
-              <div className="p-4 flex justify-center gap-4">
-                {weddingPackages.map((pkg) => (
-                  <Link
-                    key={pkg.name}
-                    to="/kontakt"
-                    className="px-6 py-2.5 border border-primary text-primary rounded-full hover:bg-primary/5 transition-colors text-sm"
-                  >
-                    Vybrať {pkg.name}
-                  </Link>
-                ))}
-              </div>
             </div>
           </motion.div>
 
