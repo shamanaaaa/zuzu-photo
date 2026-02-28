@@ -160,7 +160,21 @@ app.post("/api/contact", async (req, res) => {
 
 // Serve Vite build
 const dist = join(dirname(fileURLToPath(import.meta.url)), "..", "dist");
-app.use(express.static(dist));
+
+// Hashed JS/CSS assets — cache forever (Vite adds content hash to filenames)
+app.use("/assets", express.static(join(dist, "assets"), {
+  maxAge: "1y",
+  immutable: true,
+}));
+
+// Photo images — cache for 30 days
+app.use("/images", express.static(join(dist, "images"), {
+  maxAge: "30d",
+}));
+
+// Everything else (index.html, favicon, etc.) — no cache so deploys are picked up immediately
+app.use(express.static(dist, { maxAge: 0 }));
+
 // Express 5 / path-to-regexp: easiest catch-all is a regex route
 app.get(/.*/, (_req, res) => res.sendFile(join(dist, "index.html")));
 

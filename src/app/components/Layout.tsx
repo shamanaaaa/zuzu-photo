@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 
@@ -17,7 +17,9 @@ export function Layout() {
       <ScrollToTop />
       <Navbar />
       <main className="flex-1 pt-16 sm:pt-20">
-        <Outlet />
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
     </div>

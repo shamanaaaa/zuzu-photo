@@ -1,12 +1,14 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router";
 import { Layout } from "./components/Layout";
 import { Home } from "./pages/Home";
-import { Portfolio } from "./pages/Portfolio";
-import { PortfolioCategory } from "./pages/PortfolioCategory";
-import { Cennik } from "./pages/Cennik";
-import { About } from "./pages/About";
-import { Contact } from "./pages/Contact";
-import { NotFound } from "./pages/NotFound";
+
+const Portfolio         = lazy(() => import("./pages/Portfolio").then(m => ({ default: m.Portfolio })));
+const PortfolioCategory = lazy(() => import("./pages/PortfolioCategory").then(m => ({ default: m.PortfolioCategory })));
+const Cennik            = lazy(() => import("./pages/Cennik").then(m => ({ default: m.Cennik })));
+const About             = lazy(() => import("./pages/About").then(m => ({ default: m.About })));
+const Contact           = lazy(() => import("./pages/Contact").then(m => ({ default: m.Contact })));
+const NotFound          = lazy(() => import("./pages/NotFound").then(m => ({ default: m.NotFound })));
 
 export const router = createBrowserRouter([
   {

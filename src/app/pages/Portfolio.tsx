@@ -57,14 +57,15 @@ export function Portfolio() {
 
       {/* Gallery Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
           {galleryImages.map((img, idx) => (
             <motion.div
               key={img.id}
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.3 }}
-              className="break-inside-avoid mb-4 cursor-pointer group rounded-xl overflow-hidden"
+              className="cursor-pointer group rounded-xl overflow-hidden"
               onClick={() => openLightbox(idx)}
             >
               <ImageWithFallback

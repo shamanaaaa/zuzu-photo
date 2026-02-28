@@ -98,6 +98,7 @@ export function Home() {
             src={images.hero}
             alt="Zuzu Photo ateliér"
             className="w-full h-full object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#3d2c2c]/80 via-[#3d2c2c]/50 to-transparent" />
         </div>
