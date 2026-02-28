@@ -142,7 +142,7 @@ import { Helmet } from 'react-helmet-async';
 <Helmet>
   <title>Profesionálny fotograf Čadca – Zuzu Photo</title>
   <meta name="description" content="Profesionálny fotograf a fotoateliér v Čadci. Novorodenci, deti, svadby, tehotenstvo, rodinné fotenie. Útulný ateliér, záhrada, parkovanie." />
-  <link rel="canonical" href="https://zuzuphoto.sk/" />
+  <link rel="canonical" href="https://zuzu-photo.sk/" />
 </Helmet>
 ```
 
@@ -153,19 +153,19 @@ Vytvoriť `public/sitemap.xml` so všetkými URL adresami:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://zuzuphoto.sk/</loc><priority>1.0</priority></url>
-  <url><loc>https://zuzuphoto.sk/portfolio</loc><priority>0.9</priority></url>
-  <url><loc>https://zuzuphoto.sk/portfolio/novorodenci</loc><priority>0.9</priority></url>
-  <url><loc>https://zuzuphoto.sk/portfolio/deti</loc><priority>0.8</priority></url>
-  <url><loc>https://zuzuphoto.sk/portfolio/rodinne</loc><priority>0.8</priority></url>
-  <url><loc>https://zuzuphoto.sk/portfolio/tehotenske</loc><priority>0.8</priority></url>
-  <url><loc>https://zuzuphoto.sk/portfolio/svadobne</loc><priority>0.8</priority></url>
-  <url><loc>https://zuzuphoto.sk/portfolio/atelier</loc><priority>0.8</priority></url>
-  <url><loc>https://zuzuphoto.sk/portfolio/exterier</loc><priority>0.7</priority></url>
-  <url><loc>https://zuzuphoto.sk/portfolio/vianocne</loc><priority>0.7</priority></url>
-  <url><loc>https://zuzuphoto.sk/cennik</loc><priority>0.9</priority></url>
-  <url><loc>https://zuzuphoto.sk/o-mne</loc><priority>0.6</priority></url>
-  <url><loc>https://zuzuphoto.sk/kontakt</loc><priority>0.7</priority></url>
+  <url><loc>https://zuzu-photo.sk/</loc><priority>1.0</priority></url>
+  <url><loc>https://zuzu-photo.sk/portfolio</loc><priority>0.9</priority></url>
+  <url><loc>https://zuzu-photo.sk/portfolio/novorodenci</loc><priority>0.9</priority></url>
+  <url><loc>https://zuzu-photo.sk/portfolio/deti</loc><priority>0.8</priority></url>
+  <url><loc>https://zuzu-photo.sk/portfolio/rodinne</loc><priority>0.8</priority></url>
+  <url><loc>https://zuzu-photo.sk/portfolio/tehotenske</loc><priority>0.8</priority></url>
+  <url><loc>https://zuzu-photo.sk/portfolio/svadobne</loc><priority>0.8</priority></url>
+  <url><loc>https://zuzu-photo.sk/portfolio/atelier</loc><priority>0.8</priority></url>
+  <url><loc>https://zuzu-photo.sk/portfolio/exterier</loc><priority>0.7</priority></url>
+  <url><loc>https://zuzu-photo.sk/portfolio/vianocne</loc><priority>0.7</priority></url>
+  <url><loc>https://zuzu-photo.sk/cennik</loc><priority>0.9</priority></url>
+  <url><loc>https://zuzu-photo.sk/o-mne</loc><priority>0.6</priority></url>
+  <url><loc>https://zuzu-photo.sk/kontakt</loc><priority>0.7</priority></url>
 </urlset>
 ```
 
@@ -173,7 +173,7 @@ Vytvoriť `public/robots.txt`:
 ```
 User-agent: *
 Allow: /
-Sitemap: https://zuzuphoto.sk/sitemap.xml
+Sitemap: https://zuzu-photo.sk/sitemap.xml
 ```
 
 ### 3.4 Structured Data – Schema.org [PRIORITA 2]
@@ -184,10 +184,10 @@ Pridať do `index.html` JSON-LD markup pre lokálny biznis:
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://zuzuphoto.sk",
+  "@id": "https://zuzu-photo.sk",
   "name": "Zuzu Photo",
   "description": "Profesionálny fotograf a fotoateliér v Čadci. Novorodenci, deti, svadby, tehotenstvo, rodinné fotenie.",
-  "image": "https://zuzuphoto.sk/og-image.jpg",
+  "image": "https://zuzu-photo.sk/og-image.jpg",
   "telephone": "+421907533373",
   "address": {
     "@type": "PostalAddress",
@@ -200,7 +200,7 @@ Pridať do `index.html` JSON-LD markup pre lokálny biznis:
     "latitude": "49.4369",
     "longitude": "18.7888"
   },
-  "url": "https://zuzuphoto.sk",
+  "url": "https://zuzu-photo.sk",
   "priceRange": "€€",
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -209,8 +209,8 @@ Pridať do `index.html` JSON-LD markup pre lokálny biznis:
     "closes": "18:00"
   },
   "sameAs": [
-    "https://www.facebook.com/zuzuphoto",
-    "https://www.instagram.com/zuzuphoto"
+    "https://www.facebook.com/zuzu-photo",
+    "https://www.instagram.com/zuzu-photo"
   ]
 }
 ```
@@ -222,8 +222,8 @@ Pridať do `index.html`:
 ```html
 <meta property="og:title" content="Profesionálny fotograf Čadca – Zuzu Photo" />
 <meta property="og:description" content="Profesionálny fotograf a fotoateliér v Čadci. Novorodenci, deti, svadby, tehotenstvo, rodinné fotenie." />
-<meta property="og:image" content="https://zuzuphoto.sk/og-image.jpg" />
-<meta property="og:url" content="https://zuzuphoto.sk" />
+<meta property="og:image" content="https://zuzu-photo.sk/og-image.jpg" />
+<meta property="og:url" content="https://zuzu-photo.sk" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="sk_SK" />
 ```
