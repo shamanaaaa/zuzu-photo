@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.zuzu-photo.sk/sitemap.xml

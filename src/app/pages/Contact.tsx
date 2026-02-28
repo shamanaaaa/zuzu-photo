@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
 import { MapPin, Phone, Mail, Facebook, Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
@@ -51,6 +52,12 @@ export function Contact() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Kontakt – Fotograf Čadca – Zuzu Photo</title>
+        <meta name="description" content="Rezervujte termín fotenia v Čadci. Telefón, správa, adresa ateliéru. Fotíme 7 dní v týždni. Čadca, Kysuce, Žilina a okolie." />
+        <link rel="canonical" href="https://www.zuzu-photo.sk/kontakt" />
+      </Helmet>
+
       {/* Header */}
       <section className="py-16 sm:py-20 bg-secondary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

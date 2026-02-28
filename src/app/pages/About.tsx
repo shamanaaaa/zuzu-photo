@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
 import { Quote, Camera } from "lucide-react";
 import { images } from "../data/images";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
@@ -23,6 +24,12 @@ const specialties = [
 export function About() {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Zuzka – fotografka Čadca – Zuzu Photo</title>
+        <meta name="description" content="Spoznajte Zuzku – profesionálnu fotografku z Čadce s 15-ročnou praxou. Novorodenci, deti, rodina, svadby, tehotenstvo. Fotografie plné emócií a lásky." />
+        <link rel="canonical" href="https://www.zuzu-photo.sk/o-mne" />
+      </Helmet>
+
       {/* Header */}
       <section className="py-16 sm:py-20 bg-secondary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

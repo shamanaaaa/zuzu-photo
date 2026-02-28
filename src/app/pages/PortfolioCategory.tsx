@@ -1,10 +1,55 @@
 import { useParams, Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useCallback, useRef, type ReactNode } from "react";
+import { Helmet } from "react-helmet-async";
 import { ArrowLeft, X, Sun, Sparkles, Baby, Shirt, Car, Heart, Palette, UsbIcon, TreePine, Coffee } from "lucide-react";
 import { galleryImages } from "../data/images";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { type LucideIcon } from "lucide-react";
+
+type CategorySeo = {
+  title: string;
+  description: string;
+};
+
+const categorySeoMap: Record<string, CategorySeo> = {
+  novorodenci: {
+    title: "Fotenie novorodencov Čadca – Zuzu Photo",
+    description: "Novorodenecké fotenie v Čadci s 15-ročnou praxou. Bezpečný ateliér, rekvizity, deky. Newborn fotografka Kysuce. Ideálne do 14–21 dní od narodenia.",
+  },
+  deti: {
+    title: "Detský fotograf Čadca – Zuzu Photo",
+    description: "Detské fotenie v Čadci – v ateliéri aj záhrade. Detský fotograf ateliér Čadca. Spontánne, úprimné záberky plné smiechu a emócií.",
+  },
+  rodinne: {
+    title: "Rodinný fotograf Čadca – Zuzu Photo",
+    description: "Rodinné fotenie Čadca a Kysuce. Ateliér, záhrada aj terasa. Rodinný fotograf Čadca s 15-ročnou praxou. Prirodzená atmosféra, profesionálny výsledok.",
+  },
+  tehotenske: {
+    title: "Tehotenské fotenie Čadca – Zuzu Photo",
+    description: "Tehotenský fotograf Čadca. Umelecké portréty budúcich mamičiek v útulnom ateliéri. Tehotenské šaty k dispozícii. Čadca, Kysuce, Žilina.",
+  },
+  svadobne: {
+    title: "Svadobný fotograf Čadca – Zuzu Photo",
+    description: "Svadobné fotenie Kysuce a Žilina. 15 rokov praxe, fotíme dvaja. Svadobný fotograf Čadca – nadčasové svadobné fotografie plné emócií.",
+  },
+  atelier: {
+    title: "Fotoateliér Čadca – Zuzu Photo",
+    description: "Fotoateliér priamo v centre Čadce. Záhrada, terasa, parkovanie, stovky rekvizít. Fotostúdio Čadca – fotenie v útulnom rodinnom dome.",
+  },
+  vianocne: {
+    title: "Vianočné fotenie Čadca – Zuzu Photo",
+    description: "Vianočné fotenie Čadca od októbra. Sviatočná atmosféra, rekvizity, detský klavír. Rezervujte termín vopred – kapacita je obmedzená!",
+  },
+  exterier: {
+    title: "Exteriérové fotenie Čadca – Zuzu Photo",
+    description: "Fotenie v exteriéri – záhrada a terasa priamo v Čadci. Prírodné svetlo, zeleň, uvoľnená atmosféra. Rodinné a detské fotenie v prírode.",
+  },
+  portret: {
+    title: "Portrétne fotografovanie Čadca – Zuzu Photo",
+    description: "Portrétne fotografovanie v Čadci – glamour, rodinné, profesionálne a študentské portréty. Záhrada aj ateliér. Kysuce a okolie.",
+  },
+};
 
 type CategoryData = {
   title: ReactNode;
@@ -202,6 +247,7 @@ export function PortfolioCategory() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const data = category ? categoryMap[category] : null;
+  const seo = category ? categorySeoMap[category] : null;
 
   if (!data) {
     return (
@@ -229,6 +275,14 @@ export function PortfolioCategory() {
 
   return (
     <div className="min-h-screen">
+      {seo && (
+        <Helmet>
+          <title>{seo.title}</title>
+          <meta name="description" content={seo.description} />
+          <link rel="canonical" href={`https://www.zuzu-photo.sk/portfolio/${category}`} />
+        </Helmet>
+      )}
+
       {/* Header */}
       <section className="py-16 sm:py-20 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
 import { Baby, Users, Heart, Gem, Building2, TreePine, Star, ArrowRight, Quote, Camera, Clock } from "lucide-react";
 import { images, galleryImages } from "../data/images";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
@@ -91,12 +92,17 @@ const testimonials = [
 export function Home() {
   return (
     <div>
+      <Helmet>
+        <title>Profesionálny fotograf Čadca – Zuzu Photo</title>
+        <meta name="description" content="Profesionálny fotograf a fotoateliér v Čadci. Novorodenci, deti, svadby, tehotenstvo, rodinné fotenie. Útulný ateliér so záhradou a parkovaním. Čadca, Kysuce, Žilina." />
+        <link rel="canonical" href="https://www.zuzu-photo.sk/" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <ImageWithFallback
             src={images.hero}
-            alt="Zuzu Photo ateliér"
+            alt="Profesionálne fotografovanie v Čadci – Zuzu Photo ateliér"
             className="w-full h-full object-cover"
             priority
           />
@@ -219,7 +225,7 @@ export function Home() {
               className="text-2xl sm:text-3xl md:text-4xl text-foreground mb-4"
               style={{ fontFamily: "var(--font-family-heading)" }}
             >
-              Čo fotografujem
+              Fotografické služby – Čadca a Kysuce
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
               Každé fotenie je pre mňa jedinečný príbeh. Pozrite sa, ako vám
@@ -363,7 +369,7 @@ export function Home() {
         <div className="absolute inset-0">
           <ImageWithFallback
             src={images.detske15}
-            alt="Fotografovanie"
+            alt="Profesionálne fotografovanie v Čadci – Zuzu Photo ateliér so záhradou"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-[#3d2c2c]/75" />

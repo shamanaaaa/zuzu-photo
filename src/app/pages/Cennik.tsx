@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
 import { Check, Star, Info, Usb } from "lucide-react";
-import { u } from "node_modules/react-router/dist/development/index-react-server-client-MKTlCGL3.d.mts";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -63,7 +63,7 @@ const pricingCards: PricingCard[] = [
     ],
   },
   {
-    title: "MINI balíček",
+    title: "MINI balíček – Rodinné fotenie",
     price: "70 €",
     items: [
       { label: "Počet upravených záberov", value: "4" },
@@ -74,7 +74,7 @@ const pricingCards: PricingCard[] = [
     ],
   },
   {
-    title: "MAXI balíček",
+    title: "MAXI balíček – Rodinné fotenie",
     price: "130 €",
     recommended: true,
     items: [
@@ -167,6 +167,12 @@ const weddingFeatureLabels = [
 export function Cennik() {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Cenník fotenia Čadca – Zuzu Photo</title>
+        <meta name="description" content="Cenník profesionálneho fotografovania v Čadci. Novorodenci od 130 €, tehotenské od 80 €, svadby od 500 €. Rodinné a detské fotenie Čadca, Kysuce." />
+        <link rel="canonical" href="https://www.zuzu-photo.sk/cennik" />
+      </Helmet>
+
       {/* Header */}
       <section className="py-16 sm:py-20 bg-secondary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -176,7 +182,7 @@ export function Cennik() {
             className="text-3xl sm:text-4xl md:text-5xl text-foreground mb-4"
             style={{ fontFamily: "var(--font-family-heading)" }}
           >
-            Cenník
+            Cenník fotografovania – Čadca a Kysuce
           </motion.h1>
           <p className="text-muted-foreground">
             Cenník je platný od 1. 1. {new Date().getFullYear()}. V prípade otázok ma neváhajte kontaktovať.
@@ -493,6 +499,50 @@ export function Cennik() {
           </div>
 
           
+
+          {/* FAQ */}
+          <motion.div {...fadeUp} className="mt-10">
+            <h2
+              className="text-2xl sm:text-3xl text-foreground mb-6 text-center"
+              style={{ fontFamily: "var(--font-family-heading)" }}
+            >
+              Časté otázky – Cena fotenia Čadca
+            </h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: "Koľko stojí fotenie novorodenca v Čadci?",
+                  a: "Novorodenecké fotenie u nás stojí 130 €. Cena zahŕňa retušovanie, 6 upravených záberov a tlač vo formáte 13 × 18 cm. Ideálny čas na fotenie je do 14–21 dní od narodenia.",
+                },
+                {
+                  q: "Ako dlho trvá fotenie?",
+                  a: "Novorodenecké fotenie trvá 2–4 hodiny, rodinné a detské fotenie cca 1–2 hodiny. Na svadbách závisí od zvoleného balíčka (3–12 hodín).",
+                },
+                {
+                  q: "Kedy dostaneme hotové fotografie?",
+                  a: "Fotografie doručíme do 6 týždňov od fotenia. Pri VIP spracovaní (príplatok 20 €, pri svadbách 75 €) doručíme prednostne v kratšom termíne.",
+                },
+                {
+                  q: "Fotografujete aj mimo Čadce – na Kysuciach alebo v Žiline?",
+                  a: "Áno, fotíme aj mimo Čadce. K cene sa pripočítavajú cestovné náklady podľa vzdialenosti.",
+                },
+                {
+                  q: "Čo si priniesť na novorodenecké fotenie?",
+                  a: "Stačí priniesť mliečko, plienočku, látkovú plienku a deku. Oblečenie, čelenky, deky a rekvizity máme pripravené v ateliéri. Ak je bábätko zvyknuté na cumlík, vezmite aj ten.",
+                },
+              ].map((item) => (
+                <div key={item.q} className="bg-card rounded-2xl border border-border p-5 sm:p-6">
+                  <h3
+                    className="text-base text-foreground mb-2"
+                    style={{ fontFamily: "var(--font-family-heading)" }}
+                  >
+                    {item.q}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
           {/* Wedding package details */}
           <motion.div
