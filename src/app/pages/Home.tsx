@@ -9,13 +9,14 @@ const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-50px" },
-  transition: { duration: 0.6, ease: "easeOut" },
+  transition: { duration: 0.6, ease: "easeOut" as const },
 };
 
 const services = [
   {
     icon: Baby,
     title: "Novorodenci",
+    alt: "Novorodenecké fotenie Čadca – Zuzu Photo ateliér",
     desc: "Prvé dni života sú najkrehkejšie a najzázračnejšie – maličké pršteky, sladké zívanie a vôňa bábätka, na ktorú sa nezabúda. Zachyťme tieto neopakovateľné chvíle skôr, než sa z nich stanú len spomienky.",
     image: images.newborn1,
     to: "/portfolio/novorodenci",
@@ -23,6 +24,7 @@ const services = [
   {
     icon: Users,
     title: "Deti",
+    alt: "Detský fotograf Čadca – fotenie detí v ateliéri a záhrade",
     desc: "Detstvo je najkrajšie a zároveň najrýchlejšie obdobie života. Každý úsmev, každý pohľad a každý malý pokrok si zaslúži zostať navždy zachovaný.",
     image: images.toddler,
     to: "/portfolio/deti",
@@ -30,13 +32,15 @@ const services = [
   {
     icon: Heart,
     title: "Tehotenské",
-    desc: "Tehotenstvo je jedinečné, magické a neopakovateľné obdobie v živote ženy. Čas, keď pod srdcom nosíte celý svoj svet. Teším sa, keď spolu zachytíme toto čarovné obdobie skôr, než sa z bruška ozve prvé „ahoj, mami“.   ",
+    alt: "Tehotenské fotenie Čadca – umelecký portrét budúcej mamičky",
+    desc: "Tehotenstvo je jedinečné, magické a neopakovateľné obdobie v živote ženy. Čas, keď pod srdcom nosíte celý svoj svet. Teším sa, keď spolu zachytíme toto čarovné obdobie skôr, než sa z bruška ozve prvé „ahoj, mami\".   ",
     image: images.maternity1,
     to: "/portfolio/tehotenske",
   },
   {
     icon: Gem,
     title: "Svadobné",
+    alt: "Svadobný fotograf Čadca – svadobné fotenie Kysuce a Žilina",
     desc: "Keď sa stretnú dve srdcia a rozhodnú sa biť ako jedno. Nech tieto okamihy zostanú živé navždy.",
     image: images.wedding1,
     to: "/portfolio/svadobne",
@@ -44,6 +48,7 @@ const services = [
   {
     icon: Building2,
     title: "Ateliér",
+    alt: "Fotoateliér Čadca – fotostúdio so záhradou a terasou Zuzu Photo",
     desc: "ZUZU photo-graphic – svetlo, emócia a prirodzenosť na jednom mieste. Fotenie v ateliéri, rozkvitnutej záhrade aj na slnečnej terase pre vaše výnimočné fotografie.",
     image: images.studio1,
     to: "/portfolio/atelier",
@@ -51,6 +56,7 @@ const services = [
   {
     icon: TreePine,
     title: "Exteriér",
+    alt: "Exteriérové fotenie Čadca – rodinné fotenie v záhrade Zuzu Photo",
     desc: "Najkrajšie momenty často vznikajú prirodzene – vonku, v pohybe, v smiechu, na čerstvom vzduchu. Prírodné svetlo, zeleň a pokojné prostredie vytvárajú dokonalú kulisu pre nadčasové fotografie.",
     image: images.exterior1,
     to: "/portfolio/exterier",
@@ -58,13 +64,15 @@ const services = [
   {
     icon: Star,
     title: "Vianočné",
+    alt: "Vianočné fotenie Čadca – sviatočná atmosféra Zuzu Photo ateliér",
     desc: "Vianoce sú časom kúziel, smiechu a spoločných spomienok, ktoré zostávajú navždy.",
     image: images.vianocne2,
     to: "/portfolio/vianocne",
   },
-    {
+  {
     icon: Star,
     title: "Rodina",
+    alt: "Rodinné fotenie Čadca – rodinný fotograf Kysuce Zuzu Photo",
     desc: "Rodinné chvíle sú tie najcennejšie a fotografie sú spomienky, ktoré vydržia celé roky.",
     image: images.family1,
     to: "/portfolio/rodinne",
@@ -250,7 +258,7 @@ export function Home() {
                   >
                     <ImageWithFallback
                       src={service.image}
-                      alt={service.title}
+                      alt={service.alt}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#3d2c2c]/90 via-[#3d2c2c]/50 to-transparent" />

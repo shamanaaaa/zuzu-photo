@@ -51,6 +51,11 @@ const categorySeoMap: Record<string, CategorySeo> = {
   },
 };
 
+type FaqItem = {
+  q: string;
+  a: string;
+};
+
 type CategoryData = {
   title: ReactNode;
   intro: ReactNode | ReactNode[];
@@ -58,13 +63,14 @@ type CategoryData = {
   cta?: string;
   ctaLink?: string;
   features?: { icon: LucideIcon; label: string }[];
+  faq?: FaqItem[];
 };
 
 const categoryMap: Record<string, CategoryData> = {
   novorodenci: {
     title: "Novorodenecké fotografovanie",
     intro: [
-      "Prvé dni života sú tie najkrehkejšie a najzázračnejšie. Maličké pršteky, sladké zívanie a vôňa bábätka, na ktorú sa nedá zabudnúť. Novorodeniatka sa fotografujú ideálne do 14 až 21 dní od narodenia, kedy ešte väčšinu času spokojne spinkajú a nechajú sa nežne uložiť do tých najrozkošnejších póz.",
+      "Fotenie novorodencov v Čadci – prvé dni života sú tie najkrehkejšie a najzázračnejšie. Maličké pršteky, sladké zívanie a vôňa bábätka, na ktorú sa nedá zabudnúť. Ako newborn fotografka na Kysuciach viem, že novorodeniatka sa fotografujú ideálne do 14 až 21 dní od narodenia, kedy ešte väčšinu času spokojne spinkajú a nechajú sa nežne uložiť do tých najrozkošnejších póz.",
       "Fotenie prebieha v útulnom rodinnom dome, kde je k dispozícii pohodlné parkovanie priamo na mieste. Čaká vás pokoj, teplé svetlo, mäkučké kožušinky, deky, veľa trpezlivosti a vôňa dobrej kávy, ktorú si môžete vychutnať bez stresu. 🤍",
       "Pre mamičky s detičkami je pripravený prebaľovací pult a všetko potrebné pre pohodlie vášho pokladu. Nemusíte si robiť starosti s balením pol domácnosti – máme pre vás kopec krásneho oblečenia, čeleniek, čiapočiek, dečiek a rekvizít, ktoré spolu vyberieme tak, aby vaše bábätko vyniklo v celej svojej dokonalosti. Oteckovia si zatiaľ môžu oddýchnuť na terase pri kávičke a vychutnať si túto výnimočnú chvíľu. A čo je najdôležitejšie – vaše bábätko je u nás v bezpečí.",
       "Fotením novorodeniatok sa venujem už viac ako 15 rokov a počas tohto času som nazbierala množstvo skúseností, trpezlivosti a citu pre prácu s tými najmenšími. Sama som mamou dvoch dievčatiek, takže veľmi dobre viem, aké vzácne a citlivé je toto obdobie. Ku každému bábätku pristupujem s rešpektom, jemnosťou a maximálnou starostlivosťou.",
@@ -76,6 +82,28 @@ const categoryMap: Record<string, CategoryData> = {
     filterKey: "novorodenci",
     cta: "Pozrieť cenník",
     ctaLink: "/cennik",
+    faq: [
+      {
+        q: "Kedy je najlepší čas na fotenie novorodenca?",
+        a: "Ideálny čas na novorodenecké fotenie v Čadci je do 14–21 dní od narodenia. V tomto období bábätko väčšinu času spí a dá sa krásne uložiť do rôznych póz. Neskôr sa už bábätká bránia polohám a fotenie je náročnejšie.",
+      },
+      {
+        q: "Čo si priniesť na novorodenecké fotenie?",
+        a: "Stačí priniesť mliečko, plienočku, látkovú plienku a deku na zabalenie. Oblečenie, čelenky, čiapočky, deky a všetky rekvizity máme pripravené v ateliéri. Ak je bábätko zvyknuté na cumlík, vezmite aj ten.",
+      },
+      {
+        q: "Ako dlho trvá novorodenecké fotenie?",
+        a: "Počítajte s 2–4 hodinami. Fotenie prebieha v pokoji, podľa tempa bábätka – kŕmenie, prebaľovanie aj odpočinok sú súčasťou fotenia. Nikam sa neponáhľame.",
+      },
+      {
+        q: "Je fotenie v ateliéri bezpečné pre novorodenca?",
+        a: "Bezpečnosť bábätka je na prvom mieste. Všetky pózy robíme s maximálnou opatrnosťou, ateliér je vyhrievaný na pohodlnú teplotu pre novorodenca. Za 15 rokov fotenia novorodencov v Čadci máme bohaté skúsenosti s prácou s tými najmenšími.",
+      },
+      {
+        q: "Koľko stojí novorodenecké fotenie v Čadci?",
+        a: "Novorodenecké fotenie stojí 130 € a zahŕňa retušovanie, 6 upravených záberov a tlač vo formáte 13 × 18 cm. Každý ďalší záber je možné dokúpiť za 20 €.",
+      },
+    ],
   },
   deti: {
     title: "Detské fotografovanie",
@@ -127,7 +155,7 @@ const categoryMap: Record<string, CategoryData> = {
   svadobne: {
     title: "Svadobné fotografovanie",
     intro: [
-      "Svadba patrí medzi najkrajšie a najvýznamnejšie dni v živote. Každý pohľad, úsmev, dotyk a slza šťastia si zaslúžia zostať navždy zachované. Naším cieľom je vytvoriť fotografie, ktoré budú nielen krásne, ale aj nadčasové – spomienky, ktoré si budete s radosťou pozerať aj o mnoho rokov.",
+      "Svadobný fotograf Čadca – svadobné fotenie na Kysuciach a v Žilinskom kraji s 15-ročnou praxou. Svadba patrí medzi najkrajšie a najvýznamnejšie dni v živote. Každý pohľad, úsmev, dotyk a slza šťastia si zaslúžia zostať navždy zachované. Naším cieľom je vytvoriť fotografie, ktoré budú nielen krásne, ale aj nadčasové – spomienky, ktoré si budete s radosťou pozerať aj o mnoho rokov.",
       'Fotíme s citom a trpezlivosťou, aby ste sa cítili prirodzene a uvoľnene. „Svadbu fotografujeme dvaja – ja a môj partner a priateľ – aby sme zachytili všetky momenty z rôznych uhlov a nič dôležité vám neuniklo."',
       "Zachytávame všetky dôležité okamihy vášho dňa – prípravy nevesty a ženícha, portrétové fotky pred alebo po obrade, samotný obrad v kostole či na úrade, gratulácie po obrade, spoločné fotografie s rodinou, prvý tanec a ďalšie okamihy oslavy. Nezabúdame ani na drobné detaily, ktoré robia váš deň jedinečným – šperky, kytice, dekorácie, úsmevy hostí, pohľady plné lásky.",
       "Fotenie prebieha podľa vašich predstáv – romantické portréty v prírode, uvoľnené fotky pri oslave, kombinácia interiéru a exteriéru. Snažíme sa zachytiť atmosféru a emócie tak, aby každá fotografia rozprávala svoj príbeh.",
@@ -355,6 +383,31 @@ export function PortfolioCategory() {
           ))}
         </div>
       </section>
+
+      {/* FAQ */}
+      {data.faq && data.faq.length > 0 && (
+        <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
+          <h2
+            className="text-2xl sm:text-3xl text-foreground mb-6 text-center"
+            style={{ fontFamily: "var(--font-family-heading)" }}
+          >
+            Časté otázky – Novorodenecké fotenie Čadca
+          </h2>
+          <div className="space-y-4">
+            {data.faq.map((item) => (
+              <div key={item.q} className="bg-card rounded-2xl border border-border p-5 sm:p-6">
+                <h3
+                  className="text-base text-foreground mb-2"
+                  style={{ fontFamily: "var(--font-family-heading)" }}
+                >
+                  {item.q}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Lightbox */}
       <AnimatePresence>
