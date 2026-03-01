@@ -47,7 +47,7 @@ export function About() {
             transition={{ delay: 0.1 }}
             className="text-muted-foreground text-lg"
           >
-            Fotografovanie je pre mňa viac než práca – je to radosť chodiť do práce a zároveň spôsob, ako zastaviť čas.
+            Fotografovanie je pre mňa viac než práca – je to radosť chodiť do práce a zároveň spôsob, ako zastaviť čas a uchovať chvíle, ktoré sa už nikdy nevrátia.
           </motion.p>
         </div>
       </section>
@@ -83,10 +83,7 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="space-y-6"
           >
-            <div className="space-y-5 text-foreground leading-relaxed">
-              <p>
-                Fotografovanie je pre mňa viac než práca – je to radosť chodiť do práce a zároveň spôsob, ako zastaviť čas a uchovať chvíle, ktoré sa už nikdy nevrátia.
-              </p>
+            <div className="space-y-5 text-foreground leading-relaxed text-justify">
               <p>
                 Moju cestu k fotografovaniu ovplyvnili moje dve krásne deti a tiež môj otec, fotograf a dokumentarista, ktorý mi daroval prvý fotoaparát a naučil ma vidieť svet cez objektív. Okrem štúdia na umeleckej škole – odboru pasiar (umelecko-remeselné spracovanie kovov) – ma fascinovali aj hodiny fotografie. Po skončení štúdia som niekoľko rokov pracovala ako grafička a zároveň fotografovala produktové fotografie, čo mi poskytlo cenný cit pre vizuál a detaily. Po materskej dovolenke som si splnila sen a otvorila vlastný ateliér.
               </p>

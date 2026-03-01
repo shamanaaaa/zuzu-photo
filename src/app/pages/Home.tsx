@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
-import { Baby, Users, Heart, Gem, Building2, TreePine, Star, ArrowRight, Quote, Camera, Clock } from "lucide-react";
+import { Baby, Users, Heart, Gem, Building2, TreePine, Star, ArrowRight, Quote, Camera, Clock, UserCircle } from "lucide-react";
 import { images, galleryImages } from "../data/images";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
@@ -76,6 +76,14 @@ const services = [
     desc: "Rodinné chvíle sú tie najcennejšie a fotografie sú spomienky, ktoré vydržia celé roky.",
     image: images.family1,
     to: "/portfolio/rodinne",
+  },
+  {
+    icon: UserCircle,
+    title: "Portrét",
+    alt: "Portrétová fotografia Čadca – Zuzu Photo ateliér",
+    desc: "Každý z nás má v sebe jedinečnú iskru. Portrét nie je len fotografia tváre – je to zachytenie osobnosti, nálady, pohľadu a emócie, ktorá vás robí výnimočnými.",
+    image: images.portret1,
+    to: "/portfolio/portret",
   },
 ];
 
@@ -182,13 +190,13 @@ export function Home() {
             {[
               {
                 icon: Heart,
-                title: "S láskou a trpezlivosťou",
-                desc: "Každé fotenie je pre mňa jedinečný príbeh. Vytváram pokojnú atmosféru, v ktorej sa cítite uvoľnene.",
+                title: "Srdcom a s trpezlivosťou",
+                desc: "Každé stretnutie pre mňa znamená viac než len fotografovanie. Vytváram bezpečný a pokojný priestor, kde môžete byť sami sebou.",
               },
               {
                 icon: Camera,
                 title: "Profesionálny výsledok",
-                desc: "Retušované fotografie, tlač a USB so zábermi – všetko pre váš dokonalý spomínkový album.",
+                desc: "Starostlivo retušované fotografie, kvalitná tlač a všetky zábery uložené na USB – pre váš dokonalý spomienkový album.",
               },
               {
                 icon: Clock,

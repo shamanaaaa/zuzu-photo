@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
-import { Check, Star, Info, Usb } from "lucide-react";
+import { Check, Star, Info, Usb, Gift } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -276,6 +276,37 @@ export function Cennik() {
         </div>
       </section>
 
+      {/* Gift Voucher */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <motion.div
+          {...fadeUp}
+          className="relative overflow-hidden rounded-2xl bg-primary/5 border border-primary/20 p-8 sm:p-10"
+        >
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="shrink-0 w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+              <Gift className="w-7 h-7 text-primary" />
+            </div>
+            <div className="flex-1">
+              <h2
+                className="text-xl sm:text-2xl text-foreground mb-2"
+                style={{ fontFamily: "var(--font-family-heading)" }}
+              >
+                Darčeková poukážka
+              </h2>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Neviete, čo darovať? Darujte krásny zážitok! Poukážky sú dostupné na novorodenecké, vianočné, rodinné aj tehotenské fotenie – alebo ako univerzálna poukážka využiteľná počas celého roka. Stačí ma kontaktovať a dohodneme podrobnosti.
+              </p>
+            </div>
+            <Link
+              to="/kontakt"
+              className="shrink-0 inline-block px-6 py-3 bg-primary text-primary-foreground rounded-full text-sm tracking-wide hover:bg-primary/90 transition-colors"
+            >
+              Objednať poukážku
+            </Link>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Add-ons */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <motion.div
@@ -310,10 +341,6 @@ export function Cennik() {
               <span>
                 <strong>VIP spracovanie</strong> — urýchlené doručenie (+ 20 € / + 75 € pri svadbách)
               </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-4 h-4 shrink-0 flex items-center justify-center text-primary">🧲</span>
-              <span><strong>Foto-magnetka</strong> — 4 €</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="w-4 h-4 shrink-0 flex items-center justify-center text-primary">📅</span>
@@ -530,6 +557,14 @@ export function Cennik() {
                   q: "Čo si priniesť na novorodenecké fotenie?",
                   a: "Stačí priniesť mliečko, plienočku, látkovú plienku a deku. Oblečenie, čelenky, deky a rekvizity máme pripravené v ateliéri. Ak je bábätko zvyknuté na cumlík, vezmite aj ten.",
                 },
+                           {
+                  q: "Dá sa u vás zakúpiť darčeková poukážka? ",
+                  a: "Áno, u nás si môžete zakúpiť darčekové poukážky na rôzne príležitosti – napríklad na novorodenecké či vianočné fotenie, alebo univerzálnu poukážku využiteľnú počas celého roka.",
+                },
+                           {
+                  q: "Kde sa nachádza váš ateliér?",
+                  a: "Náš fotoateliér sa nachádza priamo v centre mesta Čadca, na Hornej ulici 123/51, v rodinnom dome s pohodlným parkovaním. Súčasťou ateliéru je aj krásna terasa so záhradou, kde je možné fotografovať aj vonku. Nachádza sa len kúsok nad Zdravotnou školou.",
+                },
               ].map((item) => (
                 <div key={item.q} className="bg-card rounded-2xl border border-border p-5 sm:p-6">
                   <h3
@@ -549,14 +584,41 @@ export function Cennik() {
             {...fadeUp}
             className="mt-8 space-y-4"
           >
+                     <h2
+              className="text-2xl sm:text-3xl text-foreground mb-6 text-center"
+              style={{ fontFamily: "var(--font-family-heading)" }}
+            >
+              Svadobné fotografovanie
+            </h2>
             <div className="bg-card rounded-2xl border border-border p-6 sm:p-8 space-y-4 text-sm leading-relaxed">
               <div className="space-y-2">
                 <h4
                   className="text-base text-foreground"
                   style={{ fontFamily: "var(--font-family-heading)" }}
                 >
+                  Balíček 1 – 500 €
+                </h4>
+                <p className="text-muted-foreground">
+                  Balíček zahŕňa fotografovanie obradu v kostole alebo na úrade,
+                  gratulácie po obrade a spoločné fotografie s rodinou.
+                  Portrétové fotografovanie v exteriéri pred alebo po obrade.
+                  Celkové trvanie cca 3 hodiny.
+                </p>
+                <p className="text-muted-foreground">
+                  Výstupom je cca 600 fotografií na USB, 30 upravených fotografií
+                  s tlačou vo formáte 13 × 18 cm. Všetky ostatné zábery sú bez retuše.
+                  Spracovanie cca 6 týždňov.
+                </p>
+              </div>
+
+              <div className="border-t border-border/50 pt-4 space-y-2">
+                <h4
+                  className="text-base text-foreground"
+                  style={{ fontFamily: "var(--font-family-heading)" }}
+                >
                   Balíček 2 – 700 €
                 </h4>
+
                 <p className="text-muted-foreground">
                   Balíček zahŕňa fotografovanie príprav nevesty, ženícha,
                   fotografovanie v kostole alebo na úrade, gratulácie po obrade
