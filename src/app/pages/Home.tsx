@@ -381,6 +381,11 @@ export function Home() {
               />
             </a>
             <span className="text-xs text-muted-foreground">Zanechajte nám recenziu</span>
+            <div className="flex flex-col items-center gap-1 text-center max-w-[220px]">
+              
+              <span className="text-sm text-muted-foreground">Ak ste boli spokojní, veľmi nás poteší vaša dobrá recenzia</span>
+              <span className="text-yellow-400 text-xl tracking-widest">★★★★★</span>
+            </div>
           </motion.div>
         </div>
       </section>
