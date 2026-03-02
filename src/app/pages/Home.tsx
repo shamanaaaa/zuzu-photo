@@ -367,14 +367,14 @@ export function Home() {
               Zobraziť všetky recenzie na Google
             </a>
             <a
-              href="https://share.google/OXsHFgJddx8h7lkEd"
+              href="https://search.google.com/local/writereview?placeid=ChIJXR_trcxBFEcRu4S7AZUMEbM"
               target="_blank"
               rel="noopener noreferrer"
               className="block rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
               aria-label="Zanechajte nám recenziu na Google"
             >
               <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=8&data=https://share.google/OXsHFgJddx8h7lkEd"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=8&data=https://search.google.com/local/writereview?placeid=ChIJXR_trcxBFEcRu4S7AZUMEbM"
                 alt="QR kód – zanechajte nám recenziu na Google"
                 width={140}
                 height={140}
