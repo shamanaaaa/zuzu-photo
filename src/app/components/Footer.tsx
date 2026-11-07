@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { Camera, Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { SiteLeveledCredit } from "./SiteLeveledCredit";
 
 export function Footer() {
   return (
@@ -121,10 +122,11 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-2 flex flex-col items-center gap-1">
           <p className="text-center text-xs text-white/40">
             &copy; {new Date().getFullYear()} Zuzu Photo — Zuzana Kondeková. Všetky práva vyhradené.
           </p>
+          <SiteLeveledCredit />
         </div>
       </div>
     </footer>

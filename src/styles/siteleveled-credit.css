@@ -1,0 +1,98 @@
+/*
+ * "tvorba webu › siteleveled" credit in the footer (src/app/components/SiteLeveledCredit.tsx).
+ * System monospace only, so no extra font is downloaded; `ch` widths rely on it.
+ * Hover or focus retypes the name; reduced motion keeps it static.
+ * The 11ch below is the length of "siteleveled".
+ */
+.sl-credit {
+  --sl-fg: #d6d0c6;
+  --sl-muted: #8c8c8c;
+  --sl-accent: #a79fff;
+  --sl-accent-2: #6fb6ff;
+  --sl-hover-bg: rgba(255, 255, 255, 0.06);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  min-height: 44px;
+  padding: 0 0.75em;
+  border-radius: 6px;
+  font: 500 12px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  color: var(--sl-fg);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+.sl-credit:hover,
+.sl-credit:focus-visible {
+  background-color: var(--sl-hover-bg);
+}
+.sl-credit:focus-visible {
+  outline: 2px solid var(--sl-accent);
+  outline-offset: 2px;
+}
+.sl-credit__prompt {
+  color: var(--sl-muted);
+}
+.sl-credit__sep {
+  color: var(--sl-accent);
+  transition: transform 0.25s;
+}
+/* Fixed width for name + caret, so retyping never changes the link's size: a
+   shrinking link would slide out from under the pointer and restart the hover. */
+.sl-credit__type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  width: calc(11ch + 0.3em + 0.75em);
+}
+.sl-credit__name {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: 1.25;
+}
+.sl-credit__caret {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.2em;
+  background: var(--sl-accent);
+  animation: sl-credit-blink 1.06s steps(1) infinite;
+}
+.sl-credit:hover .sl-credit__sep,
+.sl-credit:focus-visible .sl-credit__sep {
+  transform: translateX(2px);
+}
+.sl-credit:hover .sl-credit__name,
+.sl-credit:focus-visible .sl-credit__name {
+  background: linear-gradient(90deg, var(--sl-accent), var(--sl-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: sl-credit-type 0.9s steps(11) 1;
+}
+.sl-credit:hover .sl-credit__caret,
+.sl-credit:focus-visible .sl-credit__caret {
+  width: 0.75em;
+  animation: none;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+@keyframes sl-credit-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes sl-credit-type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 11ch;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sl-credit,
+  .sl-credit * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
