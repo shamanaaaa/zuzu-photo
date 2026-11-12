@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
-import { Helmet } from "react-helmet-async";
+import { Seo } from "../components/Seo";
 import { Check, Star, Info, Usb, Gift } from "lucide-react";
 
 const fadeUp = {
@@ -167,11 +167,7 @@ const weddingFeatureLabels = [
 export function Cennik() {
   return (
     <div className="min-h-screen">
-      <Helmet>
-        <title>Cenník fotenia Čadca – Zuzu Photo</title>
-        <meta name="description" content="Cenník profesionálneho fotografovania v Čadci. Novorodenci od 130 €, tehotenské od 80 €, svadby od 500 €. Rodinné a detské fotenie Čadca, Kysuce." />
-        <link rel="canonical" href="https://www.zuzu-photo.sk/cennik" />
-      </Helmet>
+      <Seo path="/cennik" />
 
       {/* Header */}
       <section className="py-16 sm:py-20 bg-secondary">

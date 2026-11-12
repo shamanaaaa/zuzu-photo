@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
-import { Helmet } from "react-helmet-async";
+import { Seo } from "../components/Seo";
 import { Baby, Users, Heart, Gem, Building2, TreePine, Star, ArrowRight, Quote, Camera, Clock, UserCircle } from "lucide-react";
 import { images, galleryImages } from "../data/images";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
@@ -123,11 +123,7 @@ const testimonials = [
 export function Home() {
   return (
     <div>
-      <Helmet>
-        <title>Profesionálny fotograf Čadca – Zuzu Photo</title>
-        <meta name="description" content="Profesionálny fotograf a fotoateliér v Čadci. Novorodenci, deti, svadby, tehotenstvo, rodinné fotenie. Útulný ateliér so záhradou a parkovaním. Čadca, Kysuce, Žilina." />
-        <link rel="canonical" href="https://www.zuzu-photo.sk/" />
-      </Helmet>
+      <Seo path="/" />
       {/* Hero Section */}
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
