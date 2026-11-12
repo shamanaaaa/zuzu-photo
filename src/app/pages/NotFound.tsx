@@ -1,9 +1,11 @@
 import { Link } from "react-router";
 import { Camera } from "lucide-react";
+import { NoIndex } from "../components/Seo";
 
 export function NotFound() {
   return (
     <div className="min-h-[60vh] flex items-center justify-center px-4">
+      <NoIndex />
       <div className="text-center">
         <Camera className="w-16 h-16 text-primary/30 mx-auto mb-6" />
         <h1

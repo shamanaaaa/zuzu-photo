@@ -117,6 +117,31 @@ function buildHtml({ name, email, phone, type, message }) {
 }
 
 const app = express();
+
+// SEO: one URL per page.
+//  - zuzu-photo.sk → www.zuzu-photo.sk (needs nginx to pass the Host header,
+//    i.e. `proxy_set_header Host $host;` — otherwise this is a no-op)
+//  - /cennik/ → /cennik
+const CANONICAL_HOST = "www.zuzu-photo.sk";
+app.use((req, res, next) => {
+  if (req.method !== "GET" && req.method !== "HEAD") return next();
+
+  const host = (req.headers.host || "").toLowerCase().split(":")[0];
+  if (host === "zuzu-photo.sk") {
+    return res.redirect(301, `https://${CANONICAL_HOST}${req.originalUrl}`);
+  }
+
+  if (req.path.length > 1 && req.path.endsWith("/")) {
+    const q = req.originalUrl.indexOf("?");
+    const query = q === -1 ? "" : req.originalUrl.slice(q);
+    // Collapse leading slashes too, so "//evil.com/" can't become a protocol-relative redirect.
+    const path = "/" + req.path.replace(/^\/+|\/+$/g, "");
+    return res.redirect(301, path + query);
+  }
+
+  next();
+});
+
 app.use(express.json());
 
 app.post("/api/contact", async (req, res) => {
@@ -172,11 +197,34 @@ app.use("/images", express.static(join(dist, "images"), {
   maxAge: "30d",
 }));
 
-// Everything else (index.html, favicon, etc.) — no cache so deploys are picked up immediately
-app.use(express.static(dist, { maxAge: 0 }));
+// Everything else (robots.txt, sitemap.xml, etc.) — no cache so deploys are picked up immediately.
+// index/redirect off: page routes are handled below, not as directory listings.
+app.use(express.static(dist, { maxAge: 0, index: false, redirect: false }));
+
+// Known page routes come from the same file the app and sitemap use.
+// If it can't be read, fall back to the old behaviour (index.html for everything).
+let knownPaths = null;
+try {
+  const seoJson = join(dirname(fileURLToPath(import.meta.url)), "..", "src", "app", "data", "seo.json");
+  knownPaths = new Set(Object.keys(JSON.parse(readFileSync(seoJson, "utf8")).pages));
+} catch (err) {
+  console.warn("seo.json not readable – serving index.html with 200 for all routes:", err.message);
+}
+
+// Prefer the prerendered file (scripts/prerender-meta.js); fall back to index.html.
+function sendHtml(res, file, status = 200) {
+  res.status(status).sendFile(existsSync(file) ? file : join(dist, "index.html"));
+}
 
 // Express 5 / path-to-regexp: easiest catch-all is a regex route
-app.get(/.*/, (_req, res) => res.sendFile(join(dist, "index.html")));
+app.get(/.*/, (req, res) => {
+  if (!knownPaths) return sendHtml(res, join(dist, "index.html"));
+  if (knownPaths.has(req.path)) {
+    return sendHtml(res, req.path === "/" ? join(dist, "index.html") : join(dist, req.path, "index.html"));
+  }
+  // Real 404 status (not a "soft 404"); the SPA still renders the NotFound page.
+  sendHtml(res, join(dist, "404.html"), 404);
+});
 
 app.listen(Number(PORT), () => {
   console.log(`Server running on port ${PORT}`);

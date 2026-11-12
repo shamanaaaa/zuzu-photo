@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
-import { Helmet } from "react-helmet-async";
+import { Seo } from "../components/Seo";
 import { X } from "lucide-react";
 import { galleryImages, portfolioCategories } from "../data/images";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
@@ -21,11 +21,7 @@ export function Portfolio() {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
-        <title>Portfólio – Fotograf Čadca – Zuzu Photo</title>
-        <meta name="description" content="Portfólio profesionálneho fotografa v Čadci. Novorodenci, deti, rodina, tehotenstvo, svadby, exteriér, ateliér. Zuzu Photo – Čadca, Kysuce." />
-        <link rel="canonical" href="https://www.zuzu-photo.sk/portfolio" />
-      </Helmet>
+      <Seo path="/portfolio" />
 
       {/* Header */}
       <section className="py-16 sm:py-20 bg-secondary">

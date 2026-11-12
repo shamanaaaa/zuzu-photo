@@ -1,0 +1,64 @@
+{
+  "siteUrl": "https://www.zuzu-photo.sk",
+  "notFound": {
+    "title": "Stránka nenájdená – Zuzu Photo"
+  },
+  "pages": {
+    "/": {
+      "title": "Profesionálny fotograf Čadca – Zuzu Photo",
+      "description": "Profesionálny fotograf a fotoateliér v Čadci. Novorodenci, deti, svadby, tehotenstvo, rodinné fotenie. Útulný ateliér so záhradou a parkovaním. Čadca, Kysuce, Žilina."
+    },
+    "/portfolio": {
+      "title": "Portfólio – Fotograf Čadca – Zuzu Photo",
+      "description": "Portfólio profesionálneho fotografa v Čadci. Novorodenci, deti, rodina, tehotenstvo, svadby, exteriér, ateliér. Zuzu Photo – Čadca, Kysuce."
+    },
+    "/portfolio/novorodenci": {
+      "title": "Fotenie novorodencov Čadca – Zuzu Photo",
+      "description": "Novorodenecké fotenie v Čadci s 15-ročnou praxou. Bezpečný ateliér, rekvizity, deky. Newborn fotografka Kysuce. Ideálne do 14–21 dní od narodenia."
+    },
+    "/portfolio/deti": {
+      "title": "Detský fotograf Čadca – Zuzu Photo",
+      "description": "Detské fotenie v Čadci – v ateliéri aj záhrade. Detský fotograf ateliér Čadca. Spontánne, úprimné záberky plné smiechu a emócií."
+    },
+    "/portfolio/rodinne": {
+      "title": "Rodinný fotograf Čadca – Zuzu Photo",
+      "description": "Rodinné fotenie Čadca a Kysuce. Ateliér, záhrada aj terasa. Rodinný fotograf Čadca s 15-ročnou praxou. Prirodzená atmosféra, profesionálny výsledok."
+    },
+    "/portfolio/tehotenske": {
+      "title": "Tehotenské fotenie Čadca – Zuzu Photo",
+      "description": "Tehotenský fotograf Čadca. Umelecké portréty budúcich mamičiek v útulnom ateliéri. Tehotenské šaty k dispozícii. Čadca, Kysuce, Žilina."
+    },
+    "/portfolio/svadobne": {
+      "title": "Svadobný fotograf Čadca – Zuzu Photo",
+      "description": "Svadobné fotenie Kysuce a Žilina. 15 rokov praxe, fotíme dvaja. Svadobný fotograf Čadca – nadčasové svadobné fotografie plné emócií."
+    },
+    "/portfolio/atelier": {
+      "title": "Fotoateliér Čadca – Zuzu Photo",
+      "description": "Fotoateliér priamo v centre Čadce. Záhrada, terasa, parkovanie, stovky rekvizít. Fotostúdio Čadca – fotenie v útulnom rodinnom dome."
+    },
+    "/portfolio/exterier": {
+      "title": "Exteriérové fotenie Čadca – Zuzu Photo",
+      "description": "Fotenie v exteriéri – záhrada a terasa priamo v Čadci. Prírodné svetlo, zeleň, uvoľnená atmosféra. Rodinné a detské fotenie v prírode."
+    },
+    "/portfolio/vianocne": {
+      "title": "Vianočné fotenie Čadca – Zuzu Photo",
+      "description": "Vianočné fotenie Čadca od októbra. Sviatočná atmosféra, rekvizity, detský klavír. Rezervujte termín vopred – kapacita je obmedzená!"
+    },
+    "/portfolio/portret": {
+      "title": "Portrétne fotografovanie Čadca – Zuzu Photo",
+      "description": "Portrétne fotografovanie v Čadci – glamour, rodinné, profesionálne a študentské portréty. Záhrada aj ateliér. Kysuce a okolie."
+    },
+    "/cennik": {
+      "title": "Cenník fotenia Čadca – Zuzu Photo",
+      "description": "Cenník profesionálneho fotografovania v Čadci. Novorodenci od 130 €, tehotenské od 80 €, svadby od 500 €. Rodinné a detské fotenie Čadca, Kysuce."
+    },
+    "/o-mne": {
+      "title": "Zuzka – fotografka Čadca – Zuzu Photo",
+      "description": "Spoznajte Zuzku – profesionálnu fotografku z Čadce s 15-ročnou praxou. Novorodenci, deti, rodina, svadby, tehotenstvo. Fotografie plné emócií a lásky."
+    },
+    "/kontakt": {
+      "title": "Kontakt – Fotograf Čadca – Zuzu Photo",
+      "description": "Rezervujte termín fotenia v Čadci. Telefón, správa, adresa ateliéru. Fotíme 7 dní v týždni. Čadca, Kysuce, Žilina a okolie."
+    }
+  }
+}
